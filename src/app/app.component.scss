@@ -1,0 +1,33 @@
+.navbar {
+  background-color: rgb(20, 93, 202);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  box-shadow: 0 5px 10px silver;
+  margin: 0;
+  padding: 0 50px;
+
+  h5 {
+    font-size: 22px;
+    font-weight: 500;
+  }
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  button {
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 6px;
+    color: rgb(0, 85, 212);
+    border: none;
+    cursor: pointer;
+    font-family: "Rubik", serif;
+  }
+}

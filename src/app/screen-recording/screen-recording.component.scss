@@ -1,0 +1,100 @@
+/* Container for the recorder */
+.recorder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+.btn {
+  padding: 14px 18px;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: "Rubik", serif;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 6px;
+  color: rgb(0, 85, 212);
+  border: none;
+  cursor: pointer;
+  font-family: "Rubik", serif;
+}
+
+button:disabled {
+  opacity: 0.4;
+}
+
+/* Start button */
+.btn.start {
+  background-color: #28a745; /* Green */
+  color: #fff;
+  border-color: #28a745;
+}
+
+.btn.start:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+/* Stop button */
+.btn.stop {
+  background-color: #dc3545; /* Red */
+  color: #fff;
+  border-color: #dc3545;
+}
+
+.btn.stop:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+
+/* Download button */
+.btn.download {
+  background-color: #007bff; /* Blue */
+  color: #fff;
+  border-color: #007bff;
+}
+
+.btn.download:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Video preview */
+.video-preview {
+  width: 60%;
+  height: 500px;
+  border-radius: 15px;
+  background-color: #000;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .video-preview {
+    width: 90%; /* Adjust width for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}

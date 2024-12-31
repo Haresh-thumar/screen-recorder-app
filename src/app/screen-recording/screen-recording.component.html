@@ -1,0 +1,27 @@
+<div class="recorder-container">
+  <div class="button-group">
+    <button
+      (click)="startRecording()"
+      [disabled]="isRecording || isDownloading"
+      class="btn start"
+    >
+      Start Recording
+    </button>
+    <button
+      (click)="stopRecording()"
+      [disabled]="!isRecording"
+      class="btn stop"
+    >
+      Stop Recording
+    </button>
+    <button
+      (click)="downloadRecording()"
+      [disabled]="!recordedBlob || isRecording"
+      class="btn download"
+    >
+      Download Recording
+    </button>
+  </div>
+
+  <video #videoElement controls class="video-preview"></video>
+</div>
