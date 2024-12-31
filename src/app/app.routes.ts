@@ -15,4 +15,11 @@ export const routes: Routes = [
         (m) => m.AnnotationToolsComponent
       ),
   },
+  {
+    path: 'img-capture',
+    loadComponent: () =>
+      import('./img-capture/img-capture.component').then(
+        (m) => m.ImgCaptureComponent
+      ),
+  },
 ];
