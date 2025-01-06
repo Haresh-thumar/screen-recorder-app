@@ -22,4 +22,25 @@ export const routes: Routes = [
         (m) => m.ImgCaptureComponent
       ),
   },
+  {
+    path: 'capture-simple',
+    loadComponent: () =>
+      import('./capture-simple/capture-simple.component').then(
+        (m) => m.CaptureSimpleComponent
+      ),
+  },
+  {
+    path: 'file-upload',
+    loadComponent: () =>
+      import('./file-upload/file-upload.component').then(
+        (m) => m.FileUploadComponent
+      ),
+  },
+  {
+    path: 'base64-compress',
+    loadComponent: () =>
+      import('./base64-compress/base64-compress.component').then(
+        (m) => m.Base64CompressComponent
+      ),
+  },
 ];

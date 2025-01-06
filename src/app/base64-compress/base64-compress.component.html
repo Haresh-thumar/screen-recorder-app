@@ -1,0 +1,65 @@
+<div class="container mt-4">
+  <!-- Upload Section -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Upload Images</h5>
+          <input
+            type="file"
+            multiple
+            class="form-control"
+            (change)="onFileSelect($event)"
+            accept="image/*"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Files Grid -->
+  <div class="row">
+    @for(file of files; track file){
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <div class="position-relative">
+          <img
+            [src]="file.compressedBase64"
+            class="card-img-top"
+            [alt]="file.fileName"
+            style="height: 200px; object-fit: cover"
+          />
+          <div class="position-absolute top-0 end-0 m-2">
+            <span class="badge bg-success">
+              {{ file.compressionRatio }}% smaller
+            </span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h6 class="card-title text-truncate" [title]="file.fileName">
+            {{ file.fileName }}
+          </h6>
+          <p class="card-text mb-1">
+            <small class="text-muted">Original: {{ file.fileSize }}</small>
+          </p>
+          <p class="card-text mb-2">
+            <small class="text-muted">
+              Compressed: {{ formatFileSize(file.compressedSize) }}
+            </small>
+          </p>
+          <button class="btn btn-danger btn-sm" (click)="removeFile(file.id)">
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+
+  <!-- No Files Message -->
+  @if(files.length === 0){
+  <div class="text-center mt-4">
+    <p>No files uploaded yet</p>
+  </div>
+  }
+</div>

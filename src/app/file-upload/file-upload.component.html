@@ -1,0 +1,60 @@
+<div class="upload-container">
+  @if (uploadedFiles.length === 0) {
+  <div class="upload-button" (click)="fileInput.click()">
+    <img src="icons/upload-file.svg" alt="file-upload" />
+    <span>Upload</span>
+    <input
+      #fileInput
+      type="file"
+      (change)="onFileSelected($event)"
+      accept=".jpg,.jpeg,.png,.pdf"
+      multiple
+      style="display: none"
+    />
+  </div>
+
+  } @if (uploadedFiles.length > 0) {
+  <div class="uploaded-files">
+    <div class="row">
+      @for (file of uploadedFiles; track file.ecounterServiceId) {
+      <div class="col-xxl-3">
+        <div class="file-item">
+          <div class="img-header">
+            <div class="file-name">{{ file.fileName }}</div>
+            <button
+              class="delete-button"
+              (click)="removeFile(file.ecounterServiceId)"
+            >
+              Delete
+            </button>
+          </div>
+          @if (file.preview) {
+          <div class="file-preview">
+            <img [src]="file.preview" alt="preview" />
+          </div>
+          } @else {
+          <div class="file-preview">
+            <div class="pdf-placeholder">PDF</div>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="browse-more">
+      <button class="browse-button" (click)="fileInput.click()">
+        Browse to upload more
+      </button>
+      <input
+        #fileInput
+        type="file"
+        (change)="onFileSelected($event)"
+        accept=".jpg,.jpeg,.png,.pdf"
+        multiple
+        style="display: none"
+      />
+    </div>
+  </div>
+  }
+</div>
