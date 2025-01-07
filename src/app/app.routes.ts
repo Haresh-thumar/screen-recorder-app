@@ -43,4 +43,11 @@ export const routes: Routes = [
         (m) => m.Base64CompressComponent
       ),
   },
+  {
+    path: 'dynamic-formarray',
+    loadComponent: () =>
+      import('./dynamic-formcontrols/dynamic-formcontrols.component').then(
+        (m) => m.DynamicFormcontrolsComponent
+      ),
+  },
 ];

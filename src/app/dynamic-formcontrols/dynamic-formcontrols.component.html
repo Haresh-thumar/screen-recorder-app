@@ -1,0 +1,101 @@
+<!----------------------------------------------------------------------------------
+                                    New Structure
+----------------------------------------------------------------------------------->
+<div class="container-fluid px-5 mt-4">
+  <div class="row">
+    <!---------- Form ---------->
+    <div class="col-md-7">
+      <form [formGroup]="dynamicForm">
+        <div formArrayName="videoList">
+          @for(card of videoList.controls; track card; let i = $index){
+          <div class="row align-items-center" [formGroupName]="i">
+            <div class="col-md-12">
+              <div class="card form-card">
+                <div class="header">
+                  <h3 class="form-value mb-2">Card - {{ i + 1 }}</h3>
+                  @if(videoList.length > 1){
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    (click)="removeCard(i)"
+                  >
+                    ✖
+                  </button>
+                  }
+                </div>
+                <div class="row">
+                  <div class="col-md-12 mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Image URL"
+                      formControlName="imageUrl"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <input
+                      type="url"
+                      class="form-control"
+                      placeholder="Title"
+                      formControlName="title"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Publish Date"
+                      formControlName="date"
+                    />
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      placeholder="Description"
+                      formControlName="description"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </form>
+
+      <!---------- Final Submit & Add ---------->
+      <div class="header">
+        <div>
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+            Submit
+          </button>
+          <button
+            type="submit"
+            class="btn btn-primary mx-3"
+            (click)="clearData()"
+          >
+            Clear
+          </button>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="btn btn-success mx-3"
+            (click)="addCard()"
+          >
+            + Add Card
+          </button>
+        </div>
+      </div>
+    </div>
+    <!---------- Preview ---------->
+    <div class="col-md-5">
+      <div class="card form-card">
+        @if(dynamicForm.value){
+        <pre class="px-2">{{ dynamicForm.value | json }}</pre>
+        }
+      </div>
+    </div>
+  </div>
+</div>
