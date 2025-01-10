@@ -50,4 +50,11 @@ export const routes: Routes = [
         (m) => m.DynamicFormcontrolsComponent
       ),
   },
+  {
+    path: 'img-to-PDF',
+    loadComponent: () =>
+      import('./browse-img-pdf/browse-img-pdf.component').then(
+        (m) => m.BrowseImgPdfComponent
+      ),
+  },
 ];
