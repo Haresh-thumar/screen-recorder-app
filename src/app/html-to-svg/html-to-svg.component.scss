@@ -1,0 +1,60 @@
+// .tree-container {
+//   width: 100%;
+//   max-width: 1156px;
+//   margin: 0 auto;
+//   padding: 10px;
+//   background-color: #f5f5f5;
+// }
+
+.convert-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  justify-content: center;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Rubik", serif;
+}
+
+.customers {
+  font-family: "Rubik", serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.customers td,
+.customers th {
+  border: 1px solid #ddd;
+  padding: 3px 8px !important;
+  font-size: 18px;
+  width: max-content;
+}
+
+.customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.customers tr:hover {
+  background-color: #ddd;
+}
+
+.customers th {
+  padding: 2px 10px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Rubik", serif !important;
+  background-color: #04aa6d;
+  color: white;
+}

@@ -1,0 +1,626 @@
+<!-- <button (click)="convertToSVG()" class="convert-btn">Convert to SVG</button>
+<button (click)="convertToPNG()" class="convert-btn">Convert to PNG</button> -->
+<button (click)="convertToPNG()" class="convert-btn">Convert to PNG</button>
+<button (click)="convertToPDF()" class="convert-btn">Convert to PDF</button>
+
+<div class="tree-container" #htmlContent>
+  <h1>A Fancy Table</h1>
+  <table class="customers">
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+      <th>new th</th>
+      <th>new field</th>
+      <th>new field</th>
+      <th>new field</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbköp</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>France</td>
+    </tr>
+  </table>
+
+  <h1>A Fancy Table</h1>
+  <table class="customers">
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+      <th>new th</th>
+      <th>new field</th>
+      <th>new field</th>
+      <th>new field</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbköp</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>France</td>
+    </tr>
+  </table>
+
+  <h1>A Fancy Table</h1>
+  <table class="customers">
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+      <th>new th</th>
+      <th>new field</th>
+      <th>new field</th>
+      <th>new field</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbköp</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>France</td>
+    </tr>
+  </table>
+
+  <h1>A Fancy Table</h1>
+  <table class="customers">
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+      <th>new th</th>
+      <th>new field</th>
+      <th>new field</th>
+      <th>new field</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbköp</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>France</td>
+    </tr>
+  </table>
+
+  <h1>A Fancy Table</h1>
+  <table class="customers">
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+      <th>new th</th>
+      <th>new field</th>
+      <th>new field</th>
+      <th>new field</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbköp</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>France</td>
+    </tr>
+  </table>
+
+  <h1>A Fancy Table</h1>
+  <table class="customers">
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+      <th>new th</th>
+      <th>new field</th>
+      <th>new field</th>
+      <th>new field</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td>Germany</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbköp</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Christina Berglund</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Königlich Essen</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Philip Cramer</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>North/South</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>Simon Crowther</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Paris spécialités</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>Marie Bertrand</td>
+      <td>France</td>
+    </tr>
+  </table>
+</div>
+
+<!-- <canvas #hiddenCanvas style="display: none"></canvas> -->

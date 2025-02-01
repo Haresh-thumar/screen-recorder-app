@@ -57,4 +57,18 @@ export const routes: Routes = [
         (m) => m.BrowseImgPdfComponent
       ),
   },
+  {
+    path: 'content-to-PDF',
+    loadComponent: () =>
+      import('./content-to-pdf/content-to-pdf.component').then(
+        (m) => m.ContentToPdfComponent
+      ),
+  },
+  {
+    path: 'html-to-svg',
+    loadComponent: () =>
+      import('./html-to-svg/html-to-svg.component').then(
+        (m) => m.HtmlToSvgComponent
+      ),
+  },
 ];
