@@ -71,4 +71,11 @@ export const routes: Routes = [
         (m) => m.HtmlToSvgComponent
       ),
   },
+  {
+    path: 'table-to-pdf',
+    loadComponent: () =>
+      import('./table-to-pdf/table-to-pdf.component').then(
+        (m) => m.TableToPdfComponent
+      ),
+  },
 ];
