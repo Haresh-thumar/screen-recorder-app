@@ -78,4 +78,11 @@ export const routes: Routes = [
         (m) => m.TableToPdfComponent
       ),
   },
+  {
+    path: 'multiple-table',
+    loadComponent: () =>
+      import('./multiple-table/multiple-table.component').then(
+        (m) => m.MultipleTableComponent
+      ),
+  },
 ];
