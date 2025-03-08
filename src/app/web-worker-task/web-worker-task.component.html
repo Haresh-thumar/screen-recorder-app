@@ -1,0 +1,40 @@
+<div class="container">
+  <h2>Image Processing with Web Workers</h2>
+
+  <div class="controls">
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+
+    <div class="filters">
+      <button [disabled]="!imageLoaded" (click)="applyFilter('grayscale')">
+        Grayscale
+      </button>
+      <button [disabled]="!imageLoaded" (click)="applyFilter('sepia')">
+        Sepia
+      </button>
+      <button [disabled]="!imageLoaded" (click)="applyFilter('invert')">
+        Invert
+      </button>
+      <button [disabled]="!imageLoaded" (click)="applyFilter('blur')">
+        Blur
+      </button>
+    </div>
+
+    @if(processing){
+    <div class="processing">
+      Processing image... <span class="spinner"></span>
+    </div>
+    }
+  </div>
+
+  <div class="image-container">
+    <div class="original">
+      <h3>Original</h3>
+      <canvas #originalCanvas></canvas>
+    </div>
+
+    <div class="processed">
+      <h3>Processed</h3>
+      <canvas #processedCanvas></canvas>
+    </div>
+  </div>
+</div>

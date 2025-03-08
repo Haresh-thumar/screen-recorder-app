@@ -1,0 +1,48 @@
+.container {
+  padding: 20px;
+}
+.controls {
+  margin-bottom: 20px;
+}
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.image-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.original,
+.processed {
+  canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 600px !important;
+    object-fit: contain;
+    background-size: cover;
+  }
+}
+
+.processing {
+  margin-top: 10px;
+  color: #007bff;
+}
+.spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

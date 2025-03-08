@@ -1,0 +1,34 @@
+.container {
+  padding: 20px;
+}
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+select,
+button {
+  padding: 8px;
+}
+.loading {
+  margin: 10px 0;
+  color: #007bff;
+}
+.result {
+  margin: 10px 0;
+  color: #28a745;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}

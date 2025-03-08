@@ -85,4 +85,18 @@ export const routes: Routes = [
         (m) => m.MultipleTableComponent
       ),
   },
+  {
+    path: 'web-worker-img',
+    loadComponent: () =>
+      import('./web-worker-task/web-worker-task.component').then(
+        (m) => m.WebWorkerTaskComponent
+      ),
+  },
+  {
+    path: 'web-worker-array',
+    loadComponent: () =>
+      import('./web-worker-array-task/web-worker-array-task.component').then(
+        (m) => m.WebWorkerArrayTaskComponent
+      ),
+  },
 ];

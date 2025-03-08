@@ -1,0 +1,62 @@
+<div class="container">
+  <h2>Large Array Sorting with Web Worker</h2>
+
+  <div class="controls">
+    <label for="sortKey">Sort by:</label>
+    <select id="sortKey" [(ngModel)]="sortKey">
+      <option value="id">ID</option>
+      <option value="name">Name</option>
+      <option value="email">Email</option>
+      <option value="age">Age</option>
+      <option value="joinDate">Join Date</option>
+    </select>
+
+    <label for="sortOrder">Order:</label>
+    <select id="sortOrder" [(ngModel)]="sortOrder">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+
+    <button (click)="sortWithWorker()" [disabled]="isSorting">
+      Sort (Web Worker)
+    </button>
+
+    <button (click)="sortMainThread()" [disabled]="isSorting">
+      Sort (Main Thread)
+    </button>
+  </div>
+
+  @if(isSorting){
+  <div class="loading">
+    Sorting {{ largeArray.length.toLocaleString() }} items...
+  </div>
+  } @if(sortingTime !== null){
+  <div class="result">Sorting completed in {{ sortingTime }}ms</div>
+  }
+
+  <div class="data-preview">
+    <h3>Data Preview (first 10 items)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Join Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(item of displayArray; track item){
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.age }}</td>
+          <td>{{ item.joinDate }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
