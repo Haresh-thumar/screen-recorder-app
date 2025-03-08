@@ -1,0 +1,181 @@
+<div class="container">
+  <h2>Multi-operation Web Worker Demo</h2>
+
+  <div class="info">
+    <p>Array Size: {{ dataArray.length.toLocaleString() }} items</p>
+    @if(processingTime){
+    <p>Last operation: {{ processingTime }}ms</p>
+    }
+  </div>
+
+  <div class="operation-panel">
+    <h3>Operations</h3>
+
+    <!-- Sort Operation -->
+    <div class="operation">
+      <h4>Sort Data</h4>
+      <div class="form-group">
+        <label for="sortKey">Sort by:</label>
+        <select id="sortKey" [(ngModel)]="sortOperation.sortKey">
+          <option value="id">ID</option>
+          <option value="name">Name</option>
+          <option value="age">Age</option>
+          <option value="salary">Salary</option>
+          <option value="department">Department</option>
+        </select>
+
+        <label for="sortOrder">Order:</label>
+        <select id="sortOrder" [(ngModel)]="sortOperation.sortOrder">
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+
+        <button
+          (click)="executeOperation('sort', sortOperation)"
+          [disabled]="isProcessing"
+        >
+          Sort
+        </button>
+      </div>
+    </div>
+
+    <!-- Filter Operation -->
+    <div class="operation">
+      <h4>Filter Data</h4>
+      <div class="form-group">
+        <label for="ageMin">Age Range:</label>
+        <input
+          type="number"
+          id="ageMin"
+          [(ngModel)]="filterOperation.ageMin"
+          placeholder="Min Age"
+        />
+        <input
+          type="number"
+          id="ageMax"
+          [(ngModel)]="filterOperation.ageMax"
+          placeholder="Max Age"
+        />
+
+        <label for="statusFilter">Status:</label>
+        <select id="statusFilter" [(ngModel)]="filterOperation.status">
+          <option value="">Any</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+          <option value="pending">Pending</option>
+        </select>
+
+        <button (click)="executeFilter()" [disabled]="isProcessing">
+          Filter
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Operation -->
+    <div class="operation">
+      <h4>Search Data</h4>
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="searchOperation.term"
+          placeholder="Search term..."
+        />
+
+        <button
+          (click)="executeOperation('search', searchOperation)"
+          [disabled]="isProcessing"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+
+    <!-- Advanced Operations -->
+    <div class="operation">
+      <h4>Advanced Operations</h4>
+      <div class="form-group">
+        <button (click)="executeAggregation()" [disabled]="isProcessing">
+          Department Summary
+        </button>
+
+        <button
+          (click)="executeCustomTransformation()"
+          [disabled]="isProcessing"
+        >
+          Calculate Bonuses
+        </button>
+
+        <button (click)="resetData()" [disabled]="isProcessing">
+          Reset Data
+        </button>
+      </div>
+    </div>
+  </div>
+
+  @if(isProcessing){
+  <div class="loading">Processing data...</div>
+  }
+
+  <!-- Results Table -->
+  <div class="results">
+    <h3>Results ({{ displayArray.length }} items shown)</h3>
+    @if(!isAggregateView){
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Department</th>
+          <th>Status</th>
+          <th>Salary</th>
+          @if(showBonus){
+          <th>Bonus</th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for(item of displayArray; track item){
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.age }}</td>
+          <td>{{ item.department }}</td>
+          <td>{{ item.status }}</td>
+          <td>{{ item.salary | currency }}</td>
+          @if(showBonus){
+          <td>{{ item.bonus | currency }}</td>
+          }
+        </tr>
+        }
+      </tbody>
+    </table>
+    } @if(isAggregateView){
+    <!-- Aggregate Results -->
+    <table>
+      <thead>
+        <tr>
+          <th>Department</th>
+          <th>Count</th>
+          <th>Avg Salary</th>
+          <th>Total Salary</th>
+          <th>Min Age</th>
+          <th>Max Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(item of displayArray; track item){
+        <tr>
+          <td>{{ item.department }}</td>
+          <td>{{ item.age_count }}</td>
+          <td>{{ item.salary_avg | currency }}</td>
+          <td>{{ item.salary_sum | currency }}</td>
+          <td>{{ item.age_min }}</td>
+          <td>{{ item.age_max }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    }
+  </div>
+</div>

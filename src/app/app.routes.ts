@@ -99,4 +99,11 @@ export const routes: Routes = [
         (m) => m.WebWorkerArrayTaskComponent
       ),
   },
+  {
+    path: 'web-worker-multi-method',
+    loadComponent: () =>
+      import(
+        './web-worker-multiple-method/web-worker-multiple-method.component'
+      ).then((m) => m.WebWorkerMultipleMethodComponent),
+  },
 ];
