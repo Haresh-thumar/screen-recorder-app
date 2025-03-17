@@ -10,16 +10,11 @@
   />
   <div class="search-controls">
     @if(searchQuery){
+    <!------- Clear Icon ------>
     <button class="clear-button" (click)="clearSearch()" title="Clear search">
       ✕
     </button>
-    <button
-      class="next-button"
-      (click)="searchService.navigateHighlight(true)"
-      title="Next match"
-    >
-      ↓
-    </button>
+    <!------- Up Icon ------>
     <button
       class="prev-button"
       (click)="searchService.navigateHighlight(false)"
@@ -27,6 +22,15 @@
     >
       ↑
     </button>
+    <!------- Down Icon ------>
+    <button
+      class="next-button"
+      (click)="searchService.navigateHighlight(true)"
+      title="Next match"
+    >
+      ↓
+    </button>
+
     }
   </div>
 </div>
