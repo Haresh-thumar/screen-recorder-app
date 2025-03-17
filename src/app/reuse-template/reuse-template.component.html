@@ -1,0 +1,42 @@
+<!----------------------------------------------------------------
+                          Define Template
+----------------------------------------------------------------->
+<!-- <ng-template #tagTemplate let-value="value">
+  <p-tag
+    [severity]="value ? 'success' : 'danger'"
+    [value]="value ? 'Y' : 'N'"
+  ></p-tag>
+</ng-template> -->
+
+<!----------------------------------------------------------------
+                      Use Template (ReUse)
+----------------------------------------------------------------->
+<!-- <app-table-column
+  [field]="'supportStaffRequired'"
+  [header]="'Is Support Staff'"
+  [sortable]="true"
+  [order]="11"
+>
+  <ng-template let-rowData>
+    <ng-container
+      [ngTemplateOutlet]="tagTemplate"
+      [ngTemplateOutletContext]="{ value: rowData.linkToTask }"
+    >
+    </ng-container>
+  </ng-template>
+</app-table-column>
+
+<app-table-column
+  [field]="'supportStaffRequired'"
+  [header]="'Is Support Staff'"
+  [sortable]="true"
+  [order]="11"
+>
+  <ng-template let-rowData>
+    <ng-container
+      [ngTemplateOutlet]="tagTemplate"
+      [ngTemplateOutletContext]="{ value: rowData.supportStaffRequired }"
+    >
+    </ng-container>
+  </ng-template>
+</app-table-column>-->
