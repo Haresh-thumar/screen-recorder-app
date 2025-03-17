@@ -1,0 +1,46 @@
+<!-- GlobalSearchComponent.html -->
+<div class="search-container">
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    (input)="onSearch()"
+    (keydown)="onKeydown($event)"
+    placeholder="Search..."
+    aria-label="Search"
+  />
+  <div class="search-controls">
+    @if(searchQuery){
+    <button class="clear-button" (click)="clearSearch()" title="Clear search">
+      ✕
+    </button>
+    <button
+      class="next-button"
+      (click)="searchService.navigateHighlight(true)"
+      title="Next match"
+    >
+      ↓
+    </button>
+    <button
+      class="prev-button"
+      (click)="searchService.navigateHighlight(false)"
+      title="Previous match"
+    >
+      ↑
+    </button>
+    }
+  </div>
+</div>
+
+<!-- Content Area -->
+<div #content class="content">
+  <app-child-list></app-child-list>
+  <app-child-paragraph></app-child-paragraph>
+  <app-child-table></app-child-table>
+</div>
+
+<!-- // Store highlighted elements
+        this.markedElements.push(
+          ...Array.from(
+            parent.querySelectorAll('.highlight') as NodeListOf<HTMLElement>
+          )
+        ); -->

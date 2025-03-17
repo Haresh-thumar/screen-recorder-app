@@ -1,0 +1,69 @@
+.input-container {
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+/* app.component.css */
+input[type="text"] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 15px auto !important;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+/* GlobalSearchComponent.scss */
+// ::ng-deep .highlight {
+//   background-color: yellow;
+//   color: black;
+// }
+
+// ::ng-deep .active-highlight {
+//   background-color: rgb(255, 94, 0);
+//   color: #fff;
+// }
+
+.container-xxl {
+  width: 85%;
+  margin: 0 auto;
+}
+
+// .highlight {
+//   background-color: yellow;
+//   color: black;
+//   padding: 2px;
+// }
+
+// .active-highlight {
+//   background-color: orange !important;
+//   color: black;
+// }
+
+.search-container {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* GlobalSearchComponent.scss */
+::ng-deep .highlight {
+  background-color: yellow;
+  color: black;
+}
+
+::ng-deep .active-highlight {
+  background-color: rgb(255, 60, 0);
+  color: #fff;
+}

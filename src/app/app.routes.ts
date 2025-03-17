@@ -106,4 +106,11 @@ export const routes: Routes = [
         './web-worker-multiple-method/web-worker-multiple-method.component'
       ).then((m) => m.WebWorkerMultipleMethodComponent),
   },
+  {
+    path: 'global-search',
+    loadComponent: () =>
+      import('./global-search/global-search.component').then(
+        (m) => m.GlobalSearchComponent
+      ),
+  },
 ];
