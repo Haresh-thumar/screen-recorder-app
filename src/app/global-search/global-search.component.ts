@@ -18,29 +18,6 @@ import { ChildTableComponent } from './child/child-table/child-table.component';
   styleUrl: './global-search.component.scss',
 })
 export class GlobalSearchComponent {
-  // searchQuery: string = '';
-  // @ViewChild('content', { static: true }) contentRef!: ElementRef;
-
-  // constructor(private searchService: SearchHighlightService) {}
-
-  // onSearch(): void {
-  //   this.searchService.searchAndHighlight(
-  //     this.searchQuery,
-  //     this.contentRef.nativeElement
-  //   );
-  // }
-
-  // onKeydown(event: KeyboardEvent): void {
-  //   if (event.key === 'Enter') {
-  //     this.searchService.navigateHighlight(true);
-  //   }
-  // }
-
-  // clearSearch(): void {
-  //   this.searchQuery = '';
-  //   this.searchService.clearHighlights();
-  // }
-
   searchQuery: string = '';
   searchService = inject(SearchHighlightService);
   @ViewChild('content', { static: true }) contentRef!: ElementRef;

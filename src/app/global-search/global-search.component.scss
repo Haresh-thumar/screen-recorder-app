@@ -1,69 +1,80 @@
-.input-container {
-  margin: 0 auto !important;
-  width: 100% !important;
-}
-
-/* app.component.css */
-input[type="text"] {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 15px auto !important;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-}
-
 /* GlobalSearchComponent.scss */
-// ::ng-deep .highlight {
-//   background-color: yellow;
-//   color: black;
-// }
-
-// ::ng-deep .active-highlight {
-//   background-color: rgb(255, 94, 0);
-//   color: #fff;
-// }
-
-.container-xxl {
-  width: 85%;
-  margin: 0 auto;
-}
-
-// .highlight {
-//   background-color: yellow;
-//   color: black;
-//   padding: 2px;
-// }
-
-// .active-highlight {
-//   background-color: orange !important;
-//   color: black;
-// }
-
 .search-container {
-  margin-bottom: 10px;
   display: flex;
-  gap: 10px;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+  max-width: 600px;
+  margin: 20px auto;
+
+  input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+
+    &:focus {
+      border-color: #0062d1;
+    }
+  }
+
+  .search-controls {
+    display: flex;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      margin-left: 4px;
+      border-radius: 4px;
+      color: #666;
+
+      &:hover {
+        background-color: #f0f0f0;
+        color: #000;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+      }
+    }
+  }
 }
 
-input {
-  padding: 5px;
-  border: 1px solid #ccc;
-  width: 200px;
-}
-
-button {
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-/* GlobalSearchComponent.scss */
 ::ng-deep .highlight {
   background-color: yellow;
   color: black;
+  border-radius: 2px;
+  padding: 0 1px;
+  margin: 0 -1px;
 }
 
 ::ng-deep .active-highlight {
   background-color: rgb(255, 60, 0);
   color: #fff;
+  border-radius: 2px;
+  padding: 0 1px;
+  margin: 0 -1px;
+}
+
+::ng-deep .search-highlight-wrapper {
+  display: inline;
+}
+
+.content {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
 }
