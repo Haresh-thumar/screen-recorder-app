@@ -113,4 +113,11 @@ export const routes: Routes = [
         (m) => m.GlobalSearchComponent
       ),
   },
+  {
+    path: 'keyboard-search',
+    loadComponent: () =>
+      import('./keyboard-search/keyboard-search.component').then(
+        (m) => m.KeyboardSearchComponent
+      ),
+  },
 ];

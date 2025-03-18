@@ -1,0 +1,22 @@
+@if(showSearchBar){
+<div class="blur-overlay">
+  <div class="search-box">
+    <input
+      type="text"
+      placeholder="Search here..."
+      [(ngModel)]="searchText"
+      (keydown.escape)="closeSearchBar()"
+    />
+    <button (click)="performSearch()" class="search-btn">Search</button>
+    <div class="close-icon">
+      <button class="close" (click)="closeSearchBar()">✖</button>
+    </div>
+  </div>
+</div>
+}
+
+<!-- Sample content to blur -->
+<div [class.blurred]="showSearchBar">
+  <h1>Welcome to My App</h1>
+  <p>This is the page content. Press Ctrl + H to open the search bar.</p>
+</div>
