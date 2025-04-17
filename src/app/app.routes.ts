@@ -120,4 +120,11 @@ export const routes: Routes = [
         (m) => m.KeyboardSearchComponent
       ),
   },
+  {
+    path: 'img-pdf-to-pdf',
+    loadComponent: () =>
+      import('./img-pdf-to-pdf/img-pdf-to-pdf.component').then(
+        (m) => m.ImgPdfToPdfComponent
+      ),
+  },
 ];
