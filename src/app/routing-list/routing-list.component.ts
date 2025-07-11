@@ -167,6 +167,15 @@ export class RoutingListComponent {
     },
   ]
 
+  routingList: any[] = [
+    {
+      id: 1,
+      title: 'cart/product-list',
+      route: '/cart/product-list'
+    },
+
+  ]
+
   othersList: any[] = [
     {
       id: 1,

@@ -1,0 +1,17 @@
+<!-- src/app/product-detail/product-detail.component.html -->
+@if (product) {
+<div class="product-detail-container">
+  <button (click)="goBack()" class="back-button">← Go Back</button>
+
+  <div class="product-detail">
+    <img [src]="product.image" [alt]="product.title" class="detail-image" />
+
+    <div class="detail-info">
+      <h1 class="detail-title">{{ product.title }}</h1>
+      <p class="detail-category">{{ product.category | titlecase }}</p>
+      <p class="detail-price">${{ product.price }}</p>
+      <p class="detail-description">{{ product.description }}</p>
+    </div>
+  </div>
+</div>
+}

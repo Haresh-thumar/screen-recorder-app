@@ -211,6 +211,42 @@ export const routes: Routes = [
   },
 
   /*------------------------------------------------------------
+                          Routing
+  ------------------------------------------------------------*/
+  {
+    path: 'cart/product-list', loadComponent: () =>
+      import(
+        './---routing/product-list/product-list.component'
+      ).then((m) => m.ProductListComponent),
+  },
+  {
+    path: 'cart/product-list-2', loadComponent: () =>
+      import(
+        './---routing/product-list-2/product-list-2.component'
+      ).then((m) => m.ProductList2Component),
+  },
+  {
+    path: 'cart/product-list-3', loadComponent: () =>
+      import(
+        './---routing/product-list-3/product-list-3.component'
+      ).then((m) => m.ProductList3Component),
+  },
+  {
+    path: 'cart/product-list-4', loadComponent: () =>
+      import(
+        './---routing/product-list-4/product-list-4.component'
+      ).then((m) => m.ProductList4Component),
+  },
+  {
+    path: 'cart/:listType/product',
+    loadComponent: () =>
+      import(
+        './---routing/product-detail/product-detail.component'
+      ).then((m) => m.ProductDetailComponent),
+    data: { reuseComponent: true },
+  },
+
+  /*------------------------------------------------------------
                             Others
   ------------------------------------------------------------*/
   {
