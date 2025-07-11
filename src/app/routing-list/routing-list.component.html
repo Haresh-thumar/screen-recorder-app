@@ -128,6 +128,22 @@
   </div>
 
   <!-----------------------------------------------------------------
+                          Reusable Animation
+  ------------------------------------------------------------------>
+  <h1 class="section-heading">• Reusable Animation</h1>
+  <div class="card section-card">
+    <div class="row">
+      @for(item of animationsList; track item.id){
+      <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <button class="custom-btn" [routerLink]="item.route">
+          {{ item.title }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-----------------------------------------------------------------
                               Others
   ------------------------------------------------------------------>
   <h1 class="section-heading">• Others</h1>

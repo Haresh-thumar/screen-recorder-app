@@ -123,6 +123,14 @@ export class RoutingListComponent {
     }
   ]
 
+  animationsList: any[] = [
+    {
+      id: 1,
+      title: 'Reusable Animation',
+      route: '/reusable-animation'
+    }
+  ]
+
   othersList: any[] = [
     {
       id: 1,

@@ -1,0 +1,269 @@
+<section class="main-section">
+  <div class="container">
+    <div class="animation-container">
+      <!-------------------------------------------------------------------
+                                  Fade Animations
+      -------------------------------------------------------------------->
+      <h1 class="dark-section-title">Fade Animations</h1>
+      <!-- Fade Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'fade'">Fade</div>
+
+      <!-- Fade Up Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'fadeUp'">
+        Fade Up
+      </div>
+
+      <!-- Fade Down Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'fadeDown'">
+        Fade Down
+      </div>
+
+      <!-- Fade Left Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'fadeLeft'">
+        Fade Left
+      </div>
+
+      <!-- Fade Right Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'fadeRight'">
+        Fade Right
+      </div>
+
+      <!-- Fade Up Right Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'fadeUpRight'">
+        Fade Up Right
+      </div>
+
+      <!-- Fade Up Left Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'fadeUpLeft'">
+        Fade Up Left
+      </div>
+
+      <!-- Fade Down Right Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'fadeDownRight'">
+        Fade Down Right
+      </div>
+
+      <!-- Fade Down Left Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'fadeDownLeft'">
+        Fade Down Left
+      </div>
+
+      <!-------------------------------------------------------------------
+                                  Flip Animations
+      -------------------------------------------------------------------->
+      <h1 class="dark-section-title">Flip Animations</h1>
+      <!-- Flip Up Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'flipUp'">
+        Flip Up
+      </div>
+
+      <!-- Flip Down Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'flipDown'">
+        Flip Down
+      </div>
+
+      <!-- Flip Left Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'flipLeft'">
+        Flip Left
+      </div>
+
+      <!-- Flip Right Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'flipRight'">
+        Flip Right
+      </div>
+
+      <!-------------------------------------------------------------------
+                                  Slide Animations
+      -------------------------------------------------------------------->
+      <h1 class="dark-section-title">Slide Animations</h1>
+      <!-- Slide Up Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'slideUp'">
+        Slide Up
+      </div>
+
+      <!-- Slide Down Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'slideDown'">
+        Slide Down
+      </div>
+
+      <!-- Slide Left Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'slideLeft'">
+        Slide Left
+      </div>
+
+      <!-- Slide Right Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'slideRight'">
+        Slide Right
+      </div>
+
+      <!-------------------------------------------------------------------
+                                  Zoom Animations
+      -------------------------------------------------------------------->
+      <h1 class="dark-section-title">Zoom Animations</h1>
+      <!-- Zoom In Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'zoomIn'">
+        Zoom In
+      </div>
+
+      <!-- Zoom In Up Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'zoomInUp'">
+        Zoom In Up
+      </div>
+
+      <!-- Zoom In Down Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'zoomInDown'">
+        Zoom In Down
+      </div>
+
+      <!-- Zoom In Left Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'zoomInLeft'">
+        Zoom In Left
+      </div>
+
+      <!-- Zoom In Right Animation -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'zoomInRight'">
+        Zoom In Right
+      </div>
+
+      <!-- Zoom Out Animation (reinterpreted as zoom-in from larger scale) -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'zoomOut'">
+        Zoom Out
+      </div>
+
+      <!-- Zoom Out Up Animation (reinterpreted as zoom-in from larger scale + up) -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'zoomOutUp'">
+        Zoom Out Up
+      </div>
+
+      <!-- Zoom Out Down Animation (reinterpreted as zoom-in from larger scale + down) -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'zoomOutDown'">
+        Zoom Out Down
+      </div>
+
+      <!-- Zoom Out Left Animation (reinterpreted as zoom-in from larger scale + left) -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'zoomOutLeft'">
+        Zoom Out Left
+      </div>
+
+      <!-- Zoom Out Right Animation (reinterpreted as zoom-in from larger scale + right) -->
+      <div class="animation-card-2" [appVisibleOnScroll]="'zoomOutRight'">
+        Zoom Out Right
+      </div>
+    </div>
+
+    <!-------------------------------------------------------------------
+                            Fade-Up Loop Animations
+    -------------------------------------------------------------------->
+    <h1 class="dark-section-title">Fade-Up Loop Animations</h1>
+    <div class="row">
+      @for(anim1 of fadeUpAnimationList; track anim1.animName) {
+      <div class="col-xxl-3">
+        <div
+          class="card animation-card"
+          [appVisibleOnScroll]="anim1.animName"
+          [animationDelay]="anim1.delay"
+        >
+          <div class="card-body">
+            <h5 class="card-title">{{ anim1.cardTitle }}</h5>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <!-------------------------------------------------------------------
+                            Fade-Down Loop Animations
+    -------------------------------------------------------------------->
+    <h1 class="dark-section-title">Fade-Down Loop Animations</h1>
+    <div class="row">
+      @for(anim2 of fadeDownAnimationList; track anim2.animName) {
+      <div class="col-xxl-3">
+        <div
+          class="card animation-card"
+          [appVisibleOnScroll]="anim2.animName"
+          [animationDelay]="anim2.delay"
+        >
+          <div class="card-body">
+            <h5 class="card-title">{{ anim2.animName }}</h5>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <!-------------------------------------------------------------------
+                              Slide-Left Loop Animations
+    -------------------------------------------------------------------->
+    <h1 class="dark-section-title">Slide-Left Loop Animations</h1>
+    <div class="row">
+      @for(anim3 of slideLeftAnimationList; track anim3.animName) {
+      <div class="col-xxl-3">
+        <div
+          class="card animation-card"
+          [appVisibleOnScroll]="anim3.animName"
+          [animationDelay]="anim3.delay"
+        >
+          <div class="card-body">
+            <h5 class="card-title">{{ anim3.animName }}</h5>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <!-------------------------------------------------------------------
+                            Slide-Right Loop Animations
+    -------------------------------------------------------------------->
+    <h1 class="dark-section-title">Slide-Right Loop Animations</h1>
+    <div class="row">
+      @for(anim4 of slideRightAnimationList; track anim4.animName) {
+      <div class="col-xxl-3">
+        <div
+          class="card animation-card"
+          [appVisibleOnScroll]="anim4.animName"
+          [animationDelay]="anim4.delay"
+        >
+          <div class="card-body">
+            <h5 class="card-title">{{ anim4.animName }}</h5>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <!-------------------------------------------------------------------
+                            Zoom-In Loop Animations
+    -------------------------------------------------------------------->
+    <h1 class="dark-section-title">Zoom-In Loop Animations</h1>
+    <div class="row">
+      @for(anim5 of zoomInAnimationList; track anim5.animName) {
+      <div class="col-xxl-3">
+        <div
+          class="card animation-card"
+          [appVisibleOnScroll]="anim5.animName"
+          [animationDelay]="anim5.delay"
+        >
+          <div class="card-body">
+            <h5 class="card-title">{{ anim5.animName }}</h5>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <!-------------------------------------------------------------------
+                            Zoom-Out Loop Animations
+    -------------------------------------------------------------------->
+    <h1 class="dark-section-title">Zoom-Out Loop Animations</h1>
+    <div class="row">
+      @for(anim6 of zoomOutAnimationList; track anim6.animName) {
+      <div class="col-xxl-3">
+        <div
+          class="card animation-card"
+          [appVisibleOnScroll]="anim6.animName"
+          [animationDelay]="anim6.delay"
+        >
+          <div class="card-body">
+            <h5 class="card-title">{{ anim6.animName }}</h5>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

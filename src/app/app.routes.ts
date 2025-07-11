@@ -158,6 +158,15 @@ export const routes: Routes = [
   },
 
   /*------------------------------------------------------------
+                        Reusable Animation
+  ------------------------------------------------------------*/
+  {
+    path: 'reusable-animation',
+    loadComponent: () =>
+      import('./---animation/animation-example/animation-example.component').then((m) => m.AnimationExampleComponent),
+  },
+
+  /*------------------------------------------------------------
                             Others
   ------------------------------------------------------------*/
   {
