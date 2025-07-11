@@ -131,6 +131,42 @@ export class RoutingListComponent {
     }
   ]
 
+  detectWindowList: any[] = [
+    {
+      id: 1,
+      title: 'Adblocker Detect',
+      route: '/adblocker-detect'
+    },
+    {
+      id: 2,
+      title: 'Detect Browser Screen Zoom Level',
+      route: '/detect-browser-screen-zoom-level'
+    },
+    {
+      id: 3,
+      title: 'Detect Display Screen Zoom Level',
+      route: '/detect-display-screen-zoom-level'
+    },
+  ]
+
+  editorList: any[] = [
+    {
+      id: 1,
+      title: 'Dark Editor',
+      route: '/dark-editor'
+    },
+    {
+      id: 2,
+      title: 'Dark Editor 2',
+      route: '/dark-editor-2'
+    },
+    {
+      id: 3,
+      title: 'Editable Textarea',
+      route: '/editable-textarea'
+    },
+  ]
+
   othersList: any[] = [
     {
       id: 1,

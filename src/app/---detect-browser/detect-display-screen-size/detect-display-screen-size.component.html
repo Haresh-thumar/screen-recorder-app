@@ -1,0 +1,17 @@
+<div class="scale-info">
+  <h2>Display Scale Info</h2>
+  <p>Estimated display scale: {{ currentScale }}%</p>
+  @if (!isHighDpi) {
+  <p class="recommended">
+    ✔️ Your display appears to be at the recommended scale <b>(100%)</b>
+  </p>
+  } @else {
+  <p class="not-recommended">
+    ⚠️ Your display appears to be scaled ({{ currentScale }}%)
+  </p>
+  }
+  <p class="note">
+    Note: This is an estimation based on browser-reported information. Actual
+    Windows display scale may differ.
+  </p>
+</div>

@@ -1,0 +1,17 @@
+<div class="window-container">
+  <div class="window-panel">
+    <h2>
+      Browser Zoom Level : <span>{{ zoomLevel }}%</span>
+    </h2>
+  </div>
+  <p
+    appZoomClass
+    [zoomLevel110]="'small-zoom'"
+    [zoomLevel125]="'medium-zoom'"
+    [zoomLevel150]="'large-zoom'"
+    [zoomLevel175]="'xlarge-zoom'"
+    [zoomLevel200]="'xxlarge-zoom'"
+  >
+    This text will change style based on browser zoom level
+  </p>
+</div>

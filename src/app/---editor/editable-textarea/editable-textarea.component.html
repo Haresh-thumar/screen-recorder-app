@@ -1,0 +1,25 @@
+<div class="editor-container">
+  <div class="editor-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="filename">interface.ts</span>
+  </div>
+
+  <div class="editor-body">
+    <div class="line-numbers" #lineNumbers>
+      @for(line of lines(); track line; let i = $index){
+      <span>{{ i + 1 }}</span>
+      }
+    </div>
+    <textarea
+      [value]="content()"
+      (input)="onInput($event)"
+      (scroll)="syncScroll($event)"
+      (keydown.enter)="onEnter($event)"
+      class="code-area"
+      spellcheck="false"
+      #codeArea
+    ></textarea>
+  </div>
+</div>

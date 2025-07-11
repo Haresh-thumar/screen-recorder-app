@@ -1,0 +1,186 @@
+/* General Page Layout */
+.page-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f7f7f7;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  label {
+    font-weight: 500;
+  }
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.editor-pane,
+.preview-pane {
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+}
+
+.code-editor {
+  width: 100%;
+  min-height: 400px;
+  padding: 1rem;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+/* --- The Image to be Exported --- */
+.image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem; // Creates space around the code window
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f9d4a5 0%, #f6a6a5 50%, #adacec 100%);
+  overflow: hidden; // Ensures children with border-radius clip correctly
+}
+
+.code-container {
+  min-width: 500px;
+  max-width: 800px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  flex-grow: 1;
+}
+
+.code-window-header {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  height: 40px;
+  background: #343434;
+  position: relative;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    &.red {
+      background: #ff5f56;
+    }
+    &.yellow {
+      background: #ffbd2e;
+    }
+    &.green {
+      background: #27c93f;
+    }
+  }
+}
+
+.file-name {
+  color: #a9a9a9;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.code-display {
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+  background: #000 !important;
+
+  // This is a common pattern to target hljs styles
+  :global(.hljs) {
+    background: transparent !important; // Override theme background
+    padding: 0;
+  }
+
+  code {
+    display: block;
+    font-family: "Fira Code", "Courier New", monospace;
+    font-size: 14px;
+    white-space: pre;
+
+    // Line Number Styling
+    :global(.line-number) {
+      display: inline-block;
+      width: 2.5em;
+      padding-right: 1em;
+      text-align: right;
+      color: #dddddd !important; // A neutral line number color
+      -webkit-user-select: none;
+      user-select: none;
+    }
+  }
+}
+
+.author-watermark {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  opacity: 0.8;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}

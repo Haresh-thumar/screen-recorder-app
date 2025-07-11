@@ -1,0 +1,97 @@
+<div class="page-container">
+  <h1>Code to Image Converter</h1>
+
+  <div class="controls">
+    <div class="control-group">
+      <label for="theme">Theme:</label>
+      <select
+        id="theme"
+        [value]="selectedTheme()"
+        (change)="onThemeChange($any($event.target).value)"
+      >
+        @for (theme of themes; track theme.value) {
+        <option [value]="theme.value">{{ theme.name }}</option>
+        }
+      </select>
+    </div>
+    <div class="control-group">
+      <label for="language">Language:</label>
+      <select
+        id="language"
+        [value]="selectedLanguage()"
+        (change)="onLanguageChange($any($event.target).value)"
+      >
+        @for (lang of languages; track lang.value) {
+        <option [value]="lang.value">{{ lang.name }}</option>
+        }
+      </select>
+    </div>
+    <div class="control-group">
+      <label for="filename">File Name:</label>
+      <input
+        id="filename"
+        type="text"
+        [value]="fileName()"
+        (input)="fileName.set($any($event.target).value)"
+        placeholder="e.g., interface.ts"
+      />
+    </div>
+    <div class="control-group">
+      <label for="author">Author:</label>
+      <input
+        id="author"
+        type="text"
+        [value]="authorName()"
+        (input)="authorName.set($any($event.target).value)"
+        placeholder="e.g., johndoe"
+      />
+    </div>
+    <div class="control-group">
+      <label>
+        <input
+          type="checkbox"
+          [checked]="showLineNumbers()"
+          (change)="onShowLineNumbersChange($any($event.target).checked)"
+        />
+        Show Line Numbers
+      </label>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="editor-pane">
+      <h3>Code Input</h3>
+      <textarea
+        class="code-editor"
+        [value]="code"
+        (input)="onCodeChange($event)"
+      ></textarea>
+    </div>
+
+    <div class="preview-pane">
+      <h3>Image Preview</h3>
+      <div #imageWrapper class="image-wrapper">
+        <div #codeContainer class="code-container">
+          <div class="code-window-header">
+            <div class="dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="file-name">{{ fileName() || "code.ts" }}</div>
+          </div>
+          <pre
+            #codeDisplay
+            class="code-display"
+          ><code [class]="'language-' + selectedLanguage()"></code></pre>
+        </div>
+        <div class="author-watermark">{{ authorName() }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button (click)="exportToPng()">Export as PNG</button>
+    <button (click)="copyImageToClipboard()">Copy Image</button>
+  </div>
+</div>

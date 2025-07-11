@@ -167,6 +167,50 @@ export const routes: Routes = [
   },
 
   /*------------------------------------------------------------
+                          Detect Browser
+  ------------------------------------------------------------*/
+  {
+    path: 'adblocker-detect', loadComponent: () =>
+      import(
+        './---detect-browser/detect-adblocker/detect-adblocker.component'
+      ).then((m) => m.DetectAdblockerComponent),
+  },
+  {
+    path: 'detect-browser-screen-zoom-level', loadComponent: () =>
+      import(
+        './---detect-browser/detect-browser-window-size/detect-browser-window-size.component'
+      ).then((m) => m.DetectBrowserWindowSizeComponent),
+  },
+  {
+    path: 'detect-display-screen-zoom-level', loadComponent: () =>
+      import(
+        './---detect-browser/detect-display-screen-size/detect-display-screen-size.component'
+      ).then((m) => m.DetectDisplayScreenSizeComponent),
+  },
+
+  /*------------------------------------------------------------
+                          Editor
+  ------------------------------------------------------------*/
+  {
+    path: 'dark-editor', loadComponent: () =>
+      import(
+        './---editor/dark-editor/dark-editor.component'
+      ).then((m) => m.DarkEditorComponent),
+  },
+  {
+    path: 'dark-editor-2', loadComponent: () =>
+      import(
+        './---editor/dark-editor-2/dark-editor-2.component'
+      ).then((m) => m.DarkEditor2Component),
+  },
+  {
+    path: 'editable-textarea', loadComponent: () =>
+      import(
+        './---editor/editable-textarea/editable-textarea.component'
+      ).then((m) => m.EditableTextareaComponent),
+  },
+
+  /*------------------------------------------------------------
                             Others
   ------------------------------------------------------------*/
   {
@@ -176,5 +220,7 @@ export const routes: Routes = [
         './---others/reuse-template/reuse-template.component'
       ).then((m) => m.ReuseTemplateComponent),
   },
+
+
 
 ];

@@ -1,0 +1,99 @@
+<div class="page-container">
+  <h1>Code to Image Converter</h1>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <!-- Theme Type Selection -->
+    <div class="control-group">
+      <label for="themeType">Mode:</label>
+      <select
+        id="themeType"
+        [ngModel]="themeType()"
+        (ngModelChange)="onThemeTypeChange($event)"
+      >
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </div>
+
+    <!-- Specific Theme Selection -->
+    <div class="control-group">
+      <label for="theme">Theme:</label>
+      <select
+        id="theme"
+        [ngModel]="selectedTheme()"
+        (ngModelChange)="selectedTheme.set($event)"
+      >
+        @for (theme of availableThemes(); track theme.value) {
+        <option [value]="theme.value">{{ theme.name }}</option>
+        }
+      </select>
+    </div>
+
+    <!-- Filename Input -->
+    <div class="control-group">
+      <label for="filename">File Name:</label>
+      <input
+        id="filename"
+        type="text"
+        [value]="fileName()"
+        (input)="fileName.set($any($event.target).value)"
+      />
+    </div>
+
+    <!-- Line Numbers Toggle -->
+    <div class="control-group">
+      <label class="checkbox-label">
+        <input
+          type="checkbox"
+          [checked]="showLineNumbers()"
+          (change)="showLineNumbers.set($any($event.target).checked)"
+        />
+        Show Line Numbers
+      </label>
+    </div>
+  </div>
+
+  <!-- PREVIEW & EDITOR AREA -->
+  <div class="preview-area">
+    <!-- This is the wrapper that will be converted to an image -->
+    <div
+      #imageWrapper
+      class="image-wrapper"
+      [class.dark-mode]="themeType() === 'dark'"
+      [class.light-mode]="themeType() === 'light'"
+    >
+      <div class="code-container">
+        <!-- Window Header -->
+        <div class="code-window-header">
+          <div class="dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="file-name">
+            <span class="file-icon">TS</span>
+            {{ fileName() || "code.ts" }}
+          </div>
+        </div>
+
+        <!-- The magic happens here: direct editing and syntax highlighting -->
+        <pre
+          #codeDisplay
+          class="code-display"
+          [attr.contenteditable]="true"
+          (input)="onCodeInput($event)"
+          (blur)="highlightCode()"
+        >
+          <code></code>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION BUTTONS -->
+  <div class="actions">
+    <button (click)="exportToPng()">Export as PNG</button>
+    <button (click)="copyImageToClipboard()">Copy Image</button>
+  </div>
+</div>

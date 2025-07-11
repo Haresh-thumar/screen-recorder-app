@@ -1,0 +1,102 @@
+.editor-container {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 700px;
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  background: #2d2d2d;
+  padding: 4px 1rem 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+    margin-bottom: 5px;
+  }
+
+  .red {
+    background: #ff5f56;
+  }
+  .yellow {
+    background: #ffbd2e;
+  }
+  .green {
+    background: #27c93f;
+  }
+
+  .filename {
+    margin-left: 0.5rem;
+    background-color: #1e1e1e;
+    padding: 0.5rem 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+.editor-body {
+  display: flex;
+  position: relative;
+  font-family: "Fira Code", monospace;
+  min-height: 200px;
+  max-height: 400px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #919191 #1e1e1e;
+
+  &::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+
+  .line-numbers {
+    display: flex;
+    flex-direction: column;
+    background: #2d2d2d;
+    color: #888;
+    text-align: right;
+    user-select: none;
+    line-height: 1.5;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    overflow-y: hidden;
+    height: fit-content;
+    min-height: 100%;
+  }
+
+  .line-numbers span {
+    display: block;
+    height: 1.5em;
+    min-height: 1.5em;
+  }
+
+  .code-area {
+    flex: 1;
+    background: #1e1e1e;
+    color: inherit;
+    border: none;
+    padding: 0.5rem;
+    line-height: 1.5;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    white-space: pre;
+    overflow-y: auto;
+    // scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
