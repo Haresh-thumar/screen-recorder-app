@@ -1,0 +1,145 @@
+<section class="custom-container">
+  <!-----------------------------------------------------------------
+                          Capture & Recording
+  ------------------------------------------------------------------>
+  <h1 class="section-heading">• Capture & Recording</h1>
+  <div class="card section-card">
+    <div class="row">
+      @for(item of captureRecordingList; track item.id){
+      <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <button class="custom-btn" [routerLink]="item.route">
+          {{ item.title }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-----------------------------------------------------------------
+                          Image & PDF
+  ------------------------------------------------------------------>
+  <h1 class="section-heading">• Image & PDF</h1>
+  <div class="card section-card">
+    <div class="row">
+      @for(item of imagePDFList; track item.id){
+      <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <button class="custom-btn" [routerLink]="item.route">
+          {{ item.title }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-----------------------------------------------------------------
+                      Image-Capture & File Upload
+  ------------------------------------------------------------------>
+  <h1 class="section-heading">• Image-Capture & File Upload</h1>
+  <div class="card section-card">
+    <div class="row">
+      @for(item of imageCaptureFileUploadList; track item.id){
+      <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <button class="custom-btn" [routerLink]="item.route">
+          {{ item.title }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-----------------------------------------------------------------
+                                JSPDF
+  ------------------------------------------------------------------>
+  <h1 class="section-heading">• JSPDF</h1>
+  <div class="card section-card">
+    <div class="row">
+      @for(item of JSPDFList; track item.id){
+      <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <button class="custom-btn" [routerLink]="item.route">
+          {{ item.title }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-----------------------------------------------------------------
+                            Reactive Forms
+  ------------------------------------------------------------------>
+  <h1 class="section-heading">• Reactive Forms</h1>
+  <div class="card section-card">
+    <div class="row">
+      @for(item of reactiveFormsList; track item.id){
+      <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <button class="custom-btn" [routerLink]="item.route">
+          {{ item.title }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-----------------------------------------------------------------
+                                Search
+  ------------------------------------------------------------------>
+  <h1 class="section-heading">• Search</h1>
+  <div class="card section-card">
+    <div class="row">
+      @for(item of searchList; track item.id){
+      <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <button class="custom-btn" [routerLink]="item.route">
+          {{ item.title }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-----------------------------------------------------------------
+                              Web-Workers
+  ------------------------------------------------------------------>
+  <h1 class="section-heading">• Web-Workers</h1>
+  <div class="card section-card">
+    <div class="row">
+      @for(item of webWorkersList; track item.id){
+      <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <button class="custom-btn" [routerLink]="item.route">
+          {{ item.title }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-----------------------------------------------------------------
+                          Toastr & Tooltip
+  ------------------------------------------------------------------>
+  <h1 class="section-heading">• Toastr & Tooltip</h1>
+  <div class="card section-card">
+    <div class="row">
+      @for(item of toastrTooltipList; track item.id){
+      <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <button class="custom-btn" [routerLink]="item.route">
+          {{ item.title }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+
+  <!-----------------------------------------------------------------
+                              Others
+  ------------------------------------------------------------------>
+  <h1 class="section-heading">• Others</h1>
+  <div class="card section-card">
+    <div class="row">
+      @for(item of othersList; track item.id){
+      <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <button class="custom-btn" [routerLink]="item.route">
+          {{ item.title }}
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+</section>

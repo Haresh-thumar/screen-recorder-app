@@ -1,22 +1,25 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'routing-list',
+    pathMatch: 'full'
+  },
+  {
+    path: 'routing-list',
+    loadComponent: () => import('./routing-list/routing-list.component').then((m) => m.RoutingListComponent),
+  },
   /*------------------------------------------------------------
                       Capture & Recording
   ------------------------------------------------------------*/
   {
     path: 'screen-recording',
-    loadComponent: () =>
-      import('./---capture-&-recording/screen-recording/screen-recording.component').then(
-        (m) => m.ScreenRecordingComponent
-      ),
+    loadComponent: () => import('./---capture-&-recording/screen-recording/screen-recording.component').then((m) => m.ScreenRecordingComponent),
   },
   {
     path: 'capture-simple',
-    loadComponent: () =>
-      import('./---capture-&-recording/capture-simple/capture-simple.component').then(
-        (m) => m.CaptureSimpleComponent
-      ),
+    loadComponent: () => import('./---capture-&-recording/capture-simple/capture-simple.component').then((m) => m.CaptureSimpleComponent),
   },
 
   /*------------------------------------------------------------
@@ -24,24 +27,15 @@ export const routes: Routes = [
   ------------------------------------------------------------*/
   {
     path: 'base64-compress',
-    loadComponent: () =>
-      import('./---image-&-pdf/base64-compress/base64-compress.component').then(
-        (m) => m.Base64CompressComponent
-      ),
+    loadComponent: () => import('./---image-&-pdf/base64-compress/base64-compress.component').then((m) => m.Base64CompressComponent),
   },
   {
     path: 'img-to-PDF',
-    loadComponent: () =>
-      import('./---image-&-pdf/browse-img-pdf/browse-img-pdf.component').then(
-        (m) => m.BrowseImgPdfComponent
-      ),
+    loadComponent: () => import('./---image-&-pdf/browse-img-pdf/browse-img-pdf.component').then((m) => m.BrowseImgPdfComponent),
   },
   {
     path: 'content-to-PDF',
-    loadComponent: () =>
-      import('./---image-&-pdf/content-to-pdf/content-to-pdf.component').then(
-        (m) => m.ContentToPdfComponent
-      ),
+    loadComponent: () => import('./---image-&-pdf/content-to-pdf/content-to-pdf.component').then((m) => m.ContentToPdfComponent),
   },
 
   /*------------------------------------------------------------
@@ -151,10 +145,16 @@ export const routes: Routes = [
   },
   {
     path: 'web-worker-multi-method',
+    loadComponent: () => import('./---web-workers/web-worker-multiple-method/web-worker-multiple-method.component').then((m) => m.WebWorkerMultipleMethodComponent),
+  },
+
+  /*------------------------------------------------------------
+                        Toastr & Tooltip
+  ------------------------------------------------------------*/
+  {
+    path: 'ngx-custom-toastr',
     loadComponent: () =>
-      import(
-        './---web-workers/web-worker-multiple-method/web-worker-multiple-method.component'
-      ).then((m) => m.WebWorkerMultipleMethodComponent),
+      import('./---toaster/show-toastr/show-toastr.component').then((m) => m.ShowToastrComponent),
   },
 
   /*------------------------------------------------------------
