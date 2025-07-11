@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-browse-img-pdf',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './browse-img-pdf.component.html',
-  styleUrl: './browse-img-pdf.component.scss',
+    selector: 'app-browse-img-pdf',
+    imports: [FormsModule],
+    templateUrl: './browse-img-pdf.component.html',
+    styleUrl: './browse-img-pdf.component.scss'
 })
 export class BrowseImgPdfComponent {
   selectedFiles: File[] = [];

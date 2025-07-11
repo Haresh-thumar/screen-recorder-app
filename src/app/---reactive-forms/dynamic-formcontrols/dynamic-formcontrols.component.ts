@@ -8,11 +8,10 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'app-dynamic-formcontrols',
-  standalone: true,
-  imports: [ReactiveFormsModule, JsonPipe],
-  templateUrl: './dynamic-formcontrols.component.html',
-  styleUrl: './dynamic-formcontrols.component.scss',
+    selector: 'app-dynamic-formcontrols',
+    imports: [ReactiveFormsModule, JsonPipe],
+    templateUrl: './dynamic-formcontrols.component.html',
+    styleUrl: './dynamic-formcontrols.component.scss'
 })
 export class DynamicFormcontrolsComponent {
   _fb = inject(FormBuilder);

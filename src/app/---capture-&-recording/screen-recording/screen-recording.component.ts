@@ -1,11 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-screen-recording',
-  standalone: true,
-  imports: [],
-  templateUrl: './screen-recording.component.html',
-  styleUrl: './screen-recording.component.scss',
+    selector: 'app-screen-recording',
+    imports: [],
+    templateUrl: './screen-recording.component.html',
+    styleUrl: './screen-recording.component.scss'
 })
 export class ScreenRecordingComponent {
   @ViewChild('videoElement', { static: true })

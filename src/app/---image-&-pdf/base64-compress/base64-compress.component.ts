@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-base64-compress',
-  standalone: true,
-  imports: [],
-  templateUrl: './base64-compress.component.html',
-  styleUrl: './base64-compress.component.scss',
+    selector: 'app-base64-compress',
+    imports: [],
+    templateUrl: './base64-compress.component.html',
+    styleUrl: './base64-compress.component.scss'
 })
 export class Base64CompressComponent {
   files: FileObject[] = [];

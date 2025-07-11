@@ -2,11 +2,10 @@ import { NgStyle } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-annotation-tools',
-  standalone: true,
-  imports: [NgStyle],
-  templateUrl: './annotation-tools.component.html',
-  styleUrl: './annotation-tools.component.scss',
+    selector: 'app-annotation-tools',
+    imports: [NgStyle],
+    templateUrl: './annotation-tools.component.html',
+    styleUrl: './annotation-tools.component.scss'
 })
 export class AnnotationToolsComponent {
   @ViewChild('videoElement') videoElement!: ElementRef<HTMLVideoElement>;

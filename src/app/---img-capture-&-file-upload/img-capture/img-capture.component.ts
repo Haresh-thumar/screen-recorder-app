@@ -4,11 +4,10 @@ import { WebcamImage, WebcamInitError, WebcamModule } from 'ngx-webcam';
 import { Observable, Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-img-capture',
-  standalone: true,
-  imports: [WebcamModule, NgStyle],
-  templateUrl: './img-capture.component.html',
-  styleUrl: './img-capture.component.scss',
+    selector: 'app-img-capture',
+    imports: [WebcamModule, NgStyle],
+    templateUrl: './img-capture.component.html',
+    styleUrl: './img-capture.component.scss'
 })
 export class ImgCaptureComponent {
   // Standard photo dimensions (12 inch × 18 inch at 300 DPI)

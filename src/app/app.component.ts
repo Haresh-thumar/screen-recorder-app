@@ -4,11 +4,10 @@ import { ToastrComponent } from './---toaster/toastr/toastr.component';
 import { ToastrService } from './---toaster/toastr/toastr.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterLink, RouterOutlet, ToastrComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    imports: [RouterLink, RouterOutlet, ToastrComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'video-recorder';

@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-web-worker-array-task',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './web-worker-array-task.component.html',
-  styleUrl: './web-worker-array-task.component.scss',
+    selector: 'app-web-worker-array-task',
+    imports: [FormsModule],
+    templateUrl: './web-worker-array-task.component.html',
+    styleUrl: './web-worker-array-task.component.scss'
 })
 export class WebWorkerArrayTaskComponent {
   private worker: Worker | undefined;

@@ -3,11 +3,10 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 @Component({
-  selector: 'app-multiple-table',
-  standalone: true,
-  imports: [],
-  templateUrl: './multiple-table.component.html',
-  styleUrl: './multiple-table.component.scss',
+    selector: 'app-multiple-table',
+    imports: [],
+    templateUrl: './multiple-table.component.html',
+    styleUrl: './multiple-table.component.scss'
 })
 export class MultipleTableComponent {
   //   generatePDF() {

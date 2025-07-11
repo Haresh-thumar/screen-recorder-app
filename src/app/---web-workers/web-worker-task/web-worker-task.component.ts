@@ -1,11 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-web-worker-task',
-  standalone: true,
-  imports: [],
-  templateUrl: './web-worker-task.component.html',
-  styleUrl: './web-worker-task.component.scss',
+    selector: 'app-web-worker-task',
+    imports: [],
+    templateUrl: './web-worker-task.component.html',
+    styleUrl: './web-worker-task.component.scss'
 })
 export class WebWorkerTaskComponent {
   @ViewChild('originalCanvas', { static: true })

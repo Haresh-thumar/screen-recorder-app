@@ -3,11 +3,10 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
 @Component({
-  selector: 'app-html-to-svg',
-  standalone: true,
-  imports: [],
-  templateUrl: './html-to-svg.component.html',
-  styleUrl: './html-to-svg.component.scss',
+    selector: 'app-html-to-svg',
+    imports: [],
+    templateUrl: './html-to-svg.component.html',
+    styleUrl: './html-to-svg.component.scss'
 })
 export class HtmlToSvgComponent {
   // @ViewChild('htmlContent') htmlContent!: ElementRef;

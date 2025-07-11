@@ -6,16 +6,15 @@ import { ChildParagraphComponent } from './child/child-paragraph/child-paragraph
 import { ChildTableComponent } from './child/child-table/child-table.component';
 
 @Component({
-  selector: 'app-global-search',
-  standalone: true,
-  imports: [
-    FormsModule,
-    ChildListComponent,
-    ChildParagraphComponent,
-    ChildTableComponent,
-  ],
-  templateUrl: './global-search.component.html',
-  styleUrl: './global-search.component.scss',
+    selector: 'app-global-search',
+    imports: [
+        FormsModule,
+        ChildListComponent,
+        ChildParagraphComponent,
+        ChildTableComponent,
+    ],
+    templateUrl: './global-search.component.html',
+    styleUrl: './global-search.component.scss'
 })
 export class GlobalSearchComponent {
   searchQuery: string = '';

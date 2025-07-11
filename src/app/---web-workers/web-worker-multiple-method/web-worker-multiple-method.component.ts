@@ -3,11 +3,10 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-web-worker-multiple-method',
-  standalone: true,
-  imports: [FormsModule, CurrencyPipe],
-  templateUrl: './web-worker-multiple-method.component.html',
-  styleUrl: './web-worker-multiple-method.component.scss',
+    selector: 'app-web-worker-multiple-method',
+    imports: [FormsModule, CurrencyPipe],
+    templateUrl: './web-worker-multiple-method.component.html',
+    styleUrl: './web-worker-multiple-method.component.scss'
 })
 export class WebWorkerMultipleMethodComponent {
   private worker: Worker | undefined;

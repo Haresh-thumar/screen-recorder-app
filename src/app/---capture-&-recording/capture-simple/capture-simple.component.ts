@@ -3,11 +3,10 @@ import { WebcamImage, WebcamModule } from 'ngx-webcam';
 import { Observable, Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-capture-simple',
-  standalone: true,
-  imports: [WebcamModule],
-  templateUrl: './capture-simple.component.html',
-  styleUrl: './capture-simple.component.scss',
+    selector: 'app-capture-simple',
+    imports: [WebcamModule],
+    templateUrl: './capture-simple.component.html',
+    styleUrl: './capture-simple.component.scss'
 })
 export class CaptureSimpleComponent {
   private trigger: Subject<any> = new Subject();

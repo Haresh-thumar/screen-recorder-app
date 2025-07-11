@@ -5,11 +5,10 @@ import { NgClass } from '@angular/common';
 import { FileItem } from './service/file-upload.model';
 
 @Component({
-  selector: 'app-img-pdf-to-pdf',
-  standalone: true,
-  imports: [NgClass, FormsModule],
-  templateUrl: './img-pdf-to-pdf.component.html',
-  styleUrl: './img-pdf-to-pdf.component.scss',
+    selector: 'app-img-pdf-to-pdf',
+    imports: [NgClass, FormsModule],
+    templateUrl: './img-pdf-to-pdf.component.html',
+    styleUrl: './img-pdf-to-pdf.component.scss'
 })
 export class ImgPdfToPdfComponent {
   private pdfService = inject(ImgPdfToPdfService);

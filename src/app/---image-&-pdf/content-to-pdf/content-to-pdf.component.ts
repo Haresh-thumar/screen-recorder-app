@@ -1,11 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-content-to-pdf',
-  standalone: true,
-  imports: [],
-  templateUrl: './content-to-pdf.component.html',
-  styleUrl: './content-to-pdf.component.scss',
+    selector: 'app-content-to-pdf',
+    imports: [],
+    templateUrl: './content-to-pdf.component.html',
+    styleUrl: './content-to-pdf.component.scss'
 })
 export class ContentToPdfComponent {
   @ViewChild('htmlContent') htmlContent!: ElementRef;

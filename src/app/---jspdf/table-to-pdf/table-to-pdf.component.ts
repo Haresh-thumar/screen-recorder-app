@@ -4,11 +4,10 @@ import html2canvas from 'html2canvas';
 import autoTable from 'jspdf-autotable';
 
 @Component({
-  selector: 'app-table-to-pdf',
-  standalone: true,
-  imports: [],
-  templateUrl: './table-to-pdf.component.html',
-  styleUrl: './table-to-pdf.component.scss',
+    selector: 'app-table-to-pdf',
+    imports: [],
+    templateUrl: './table-to-pdf.component.html',
+    styleUrl: './table-to-pdf.component.scss'
 })
 export class TableToPdfComponent {
   // Sample dynamic data for the table

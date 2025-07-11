@@ -2,11 +2,10 @@ import { Component, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-keyboard-search',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './keyboard-search.component.html',
-  styleUrl: './keyboard-search.component.scss',
+    selector: 'app-keyboard-search',
+    imports: [FormsModule],
+    templateUrl: './keyboard-search.component.html',
+    styleUrl: './keyboard-search.component.scss'
 })
 export class KeyboardSearchComponent {
   showSearchBar = false;
