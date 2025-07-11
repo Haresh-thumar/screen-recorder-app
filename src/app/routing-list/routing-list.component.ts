@@ -176,7 +176,7 @@ export class RoutingListComponent {
 
   ]
 
-  othersList: any[] = [
+  angularTutorialsList: any[] = [
     {
       id: 1,
       title: 'Reusable Templates',

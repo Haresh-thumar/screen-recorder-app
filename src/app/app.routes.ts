@@ -247,13 +247,13 @@ export const routes: Routes = [
   },
 
   /*------------------------------------------------------------
-                            Others
+                        Angular Tutorials
   ------------------------------------------------------------*/
   {
-    path: 'reusable-templates',
+    path: 'angular-tutorials',
     loadComponent: () =>
       import(
-        './---others/reuse-template/reuse-template.component'
+        './---Angular-tutorials/reuse-template/reuse-template.component'
       ).then((m) => m.ReuseTemplateComponent),
   },
 
