@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { ToastrComponent } from "./toastr/toastr.component";
-import { ToastrService } from './toastr/toastr.service';
+import { ToastrComponent } from './---toaster/toastr/toastr.component';
+import { ToastrService } from './---toaster/toastr/toastr.service';
 
 @Component({
   selector: 'app-root',

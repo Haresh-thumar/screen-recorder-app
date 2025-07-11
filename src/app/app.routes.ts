@@ -1,101 +1,151 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+  /*------------------------------------------------------------
+                      Capture & Recording
+  ------------------------------------------------------------*/
   {
     path: 'screen-recording',
     loadComponent: () =>
-      import('./screen-recording/screen-recording.component').then(
+      import('./---capture-&-recording/screen-recording/screen-recording.component').then(
         (m) => m.ScreenRecordingComponent
-      ),
-  },
-  {
-    path: 'annotation-tools',
-    loadComponent: () =>
-      import('./annotation-tools/annotation-tools.component').then(
-        (m) => m.AnnotationToolsComponent
-      ),
-  },
-  {
-    path: 'img-capture',
-    loadComponent: () =>
-      import('./img-capture/img-capture.component').then(
-        (m) => m.ImgCaptureComponent
       ),
   },
   {
     path: 'capture-simple',
     loadComponent: () =>
-      import('./capture-simple/capture-simple.component').then(
+      import('./---capture-&-recording/capture-simple/capture-simple.component').then(
         (m) => m.CaptureSimpleComponent
       ),
   },
-  {
-    path: 'file-upload',
-    loadComponent: () =>
-      import('./file-upload/file-upload.component').then(
-        (m) => m.FileUploadComponent
-      ),
-  },
+
+  /*------------------------------------------------------------
+                          Image & PDF
+  ------------------------------------------------------------*/
   {
     path: 'base64-compress',
     loadComponent: () =>
-      import('./base64-compress/base64-compress.component').then(
+      import('./---image-&-pdf/base64-compress/base64-compress.component').then(
         (m) => m.Base64CompressComponent
-      ),
-  },
-  {
-    path: 'dynamic-formarray',
-    loadComponent: () =>
-      import('./dynamic-formcontrols/dynamic-formcontrols.component').then(
-        (m) => m.DynamicFormcontrolsComponent
       ),
   },
   {
     path: 'img-to-PDF',
     loadComponent: () =>
-      import('./browse-img-pdf/browse-img-pdf.component').then(
+      import('./---image-&-pdf/browse-img-pdf/browse-img-pdf.component').then(
         (m) => m.BrowseImgPdfComponent
       ),
   },
   {
     path: 'content-to-PDF',
     loadComponent: () =>
-      import('./content-to-pdf/content-to-pdf.component').then(
+      import('./---image-&-pdf/content-to-pdf/content-to-pdf.component').then(
         (m) => m.ContentToPdfComponent
       ),
   },
+
+  /*------------------------------------------------------------
+                  Image-Capture & File Upload
+  ------------------------------------------------------------*/
+  {
+    path: 'annotation-tools',
+    loadComponent: () =>
+      import('./---img-capture-&-file-upload/annotation-tools/annotation-tools.component').then(
+        (m) => m.AnnotationToolsComponent
+      ),
+  },
+  {
+    path: 'img-capture',
+    loadComponent: () =>
+      import('./---img-capture-&-file-upload/img-capture/img-capture.component').then(
+        (m) => m.ImgCaptureComponent
+      ),
+  },
+
+  {
+    path: 'file-upload',
+    loadComponent: () =>
+      import('./---img-capture-&-file-upload/file-upload/file-upload.component').then(
+        (m) => m.FileUploadComponent
+      ),
+  },
+
+  /*------------------------------------------------------------
+                              JSPDF
+  ------------------------------------------------------------*/
   {
     path: 'html-to-svg',
     loadComponent: () =>
-      import('./html-to-svg/html-to-svg.component').then(
+      import('./---jspdf/html-to-svg/html-to-svg.component').then(
         (m) => m.HtmlToSvgComponent
       ),
   },
   {
-    path: 'table-to-pdf',
+    path: 'img-pdf-to-pdf',
     loadComponent: () =>
-      import('./table-to-pdf/table-to-pdf.component').then(
-        (m) => m.TableToPdfComponent
+      import('./---jspdf/img-pdf-to-pdf/img-pdf-to-pdf.component').then(
+        (m) => m.ImgPdfToPdfComponent
       ),
   },
   {
     path: 'multiple-table',
     loadComponent: () =>
-      import('./multiple-table/multiple-table.component').then(
+      import('./---jspdf/multiple-table/multiple-table.component').then(
         (m) => m.MultipleTableComponent
       ),
   },
   {
+    path: 'table-to-pdf',
+    loadComponent: () =>
+      import('./---jspdf/table-to-pdf/table-to-pdf.component').then(
+        (m) => m.TableToPdfComponent
+      ),
+  },
+
+
+  /*------------------------------------------------------------
+                          Reactive Forms
+  ------------------------------------------------------------*/
+  {
+    path: 'dynamic-formarray',
+    loadComponent: () =>
+      import('./---reactive-forms/dynamic-formcontrols/dynamic-formcontrols.component').then(
+        (m) => m.DynamicFormcontrolsComponent
+      ),
+  },
+
+  /*------------------------------------------------------------
+                              Search
+  ------------------------------------------------------------*/
+  {
+    path: 'global-search',
+    loadComponent: () =>
+      import('./---search/global-search/global-search.component').then(
+        (m) => m.GlobalSearchComponent
+      ),
+  },
+  {
+    path: 'keyboard-search',
+    loadComponent: () =>
+      import('./---search/keyboard-search/keyboard-search.component').then(
+        (m) => m.KeyboardSearchComponent
+      ),
+  },
+
+  /*------------------------------------------------------------
+                            Web-Workers
+  ------------------------------------------------------------*/
+  {
     path: 'web-worker-img',
     loadComponent: () =>
-      import('./web-worker-task/web-worker-task.component').then(
+      import('./---web-workers/web-worker-task/web-worker-task.component').then(
         (m) => m.WebWorkerTaskComponent
       ),
   },
   {
     path: 'web-worker-array',
     loadComponent: () =>
-      import('./web-worker-array-task/web-worker-array-task.component').then(
+      import('./---web-workers/web-worker-array-task/web-worker-array-task.component').then(
         (m) => m.WebWorkerArrayTaskComponent
       ),
   },
@@ -103,28 +153,19 @@ export const routes: Routes = [
     path: 'web-worker-multi-method',
     loadComponent: () =>
       import(
-        './web-worker-multiple-method/web-worker-multiple-method.component'
+        './---web-workers/web-worker-multiple-method/web-worker-multiple-method.component'
       ).then((m) => m.WebWorkerMultipleMethodComponent),
   },
+
+  /*------------------------------------------------------------
+                            Others
+  ------------------------------------------------------------*/
   {
-    path: 'global-search',
+    path: 'reusable-templates',
     loadComponent: () =>
-      import('./global-search/global-search.component').then(
-        (m) => m.GlobalSearchComponent
-      ),
+      import(
+        './---others/reuse-template/reuse-template.component'
+      ).then((m) => m.ReuseTemplateComponent),
   },
-  {
-    path: 'keyboard-search',
-    loadComponent: () =>
-      import('./keyboard-search/keyboard-search.component').then(
-        (m) => m.KeyboardSearchComponent
-      ),
-  },
-  {
-    path: 'img-pdf-to-pdf',
-    loadComponent: () =>
-      import('./img-pdf-to-pdf/img-pdf-to-pdf.component').then(
-        (m) => m.ImgPdfToPdfComponent
-      ),
-  },
+
 ];
