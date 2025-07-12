@@ -1,0 +1,61 @@
+<div class="multiselect-container">
+  <div class="dropdown-header" (click)="toggleDropdown()">
+    <div class="selected-items">
+      @if (getSelectedItems().length === 0) {
+      <span class="default-placeholder">{{ placeholder }}</span>
+      } @else { @for (item of getSelectedItems(); track item.id) {
+      <div class="selected-tag">
+        <span>{{ item.label }}</span>
+        <span class="remove-icon" (click)="removeItem(item, $event)">×</span>
+      </div>
+      } }
+    </div>
+    <span class="dropdown-arrow">
+      <img
+        [src]="isOpen ? 'image/up-arrow.svg' : 'image/down-arrow.svg'"
+        alt="up/down arrow" />
+      <!-- {{ isOpen ? "⮝" : "⮟" }} -->
+    </span>
+  </div>
+
+  @if (isOpen) {
+  <div class="dropdown-list">
+    <div class="search-box">
+      <input
+        type="text"
+        [formControl]="searchControl"
+        placeholder="Search..."
+        (click)="$event.stopPropagation()" />
+    </div>
+
+    <div class="select-all">
+      <label>
+        <input
+          type="checkbox"
+          [checked]="allSelected()"
+          [indeterminate]="someButNotAllSelected()"
+          (change)="toggleSelectAll()"
+          (click)="$event.stopPropagation()" />
+        Select All
+      </label>
+    </div>
+
+    <div class="options-list">
+      @for (option of filteredOptions; track option.id) {
+      <div class="option" [ngClass]="{ selected: option.selected }">
+        <label>
+          <input
+            type="checkbox"
+            [checked]="option.selected"
+            (change)="toggleOption(option, $event)"
+            (click)="$event.stopPropagation()" />
+          {{ option.label }}
+        </label>
+      </div>
+      } @empty {
+      <div class="no-results">No results found</div>
+      }
+    </div>
+  </div>
+  }
+</div>

@@ -189,7 +189,6 @@ export class RoutingListComponent {
       title: 'cart/product-list',
       route: '/cart/product-list'
     },
-
   ]
 
   angularTutorialsList: any[] = [
@@ -257,6 +256,19 @@ export class RoutingListComponent {
       id: 13,
       title: 'Switch Case Template',
       route: '/switch-case-template'
+    },
+  ]
+
+  otherList: any[] = [
+    {
+      id: 1,
+      title: 'Waveform Player',
+      route: '/waveform-player'
+    },
+    {
+      id: 2,
+      title: 'Multiselect Dropdown',
+      route: '/multiselect-dropdown'
     },
   ]
 

@@ -1,0 +1,40 @@
+<h2 class="text-center fw-bold text-success">Multiselect Dropdown Example</h2>
+
+<div class="section">
+  <h3 class="fw-bold text-primary">Reactive Form Example</h3>
+  <form [formGroup]="reactiveForm">
+    <div class="form-group">
+      <label>Choose items:</label>
+      <app-multi-select-dropdown
+        [options]="dropdownOptions"
+        placeholder="Select items"
+        formControlName="selectedItems"
+        (selectionChange)="onReactiveFormChange($event)">
+      </app-multi-select-dropdown>
+    </div>
+    <div class="selected-values">
+      <strong>Selected Values:</strong>
+      <pre>{{ reactiveForm.get("selectedItems")?.value | json }}</pre>
+    </div>
+  </form>
+</div>
+
+<div class="section">
+  <h3 class="fw-bold text-primary">Template-Driven Form Example</h3>
+  <form #templateForm="ngForm">
+    <div class="form-group">
+      <label>Choose items:</label>
+      <app-multi-select-dropdown
+        [options]="dropdownOptions"
+        placeholder="Select items"
+        [(ngModel)]="templateDrivenSelectedItems"
+        name="selectedItems"
+        (selectionChange)="onTemplateDrivenChange($event)">
+      </app-multi-select-dropdown>
+    </div>
+    <div class="selected-values">
+      <strong>Selected Values:</strong>
+      <pre>{{ templateDrivenSelectedItems | json }}</pre>
+    </div>
+  </form>
+</div>

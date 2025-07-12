@@ -355,6 +355,18 @@ export const routes: Routes = [
       ).then((m) => m.SwitchCaseTemplateComponent),
   },
 
-
+  /*------------------------------------------------------------
+                              Others
+  ------------------------------------------------------------*/
+  {
+    path: 'waveform-player',
+    loadComponent: () =>
+      import('./---other/custom-waveform-player/custom-waveform-player.component').then((m) => m.CustomWaveformPlayerComponent),
+  },
+  {
+    path: 'multiselect-dropdown',
+    loadComponent: () =>
+      import('./---other/custom-multiselect-dropdown/custom-multiselect-dropdown.component').then((m) => m.CustomMultiselectDropdownComponent),
+  },
 
 ];
