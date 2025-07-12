@@ -1,0 +1,149 @@
+/*---- from chatGPT ----*/
+  private createCampDetailsHeaderDynamic(
+    doc: jsPDF,
+    startY: number,
+    data: any,
+    usableWidth: number
+  ): number {
+    const rowHeight = 4.5;
+    const leftX = this.MARGIN_LEFT + 2;
+    const midX = this.MARGIN_LEFT + usableWidth / 2;
+    const leftValueX = leftX + 25;
+    const rightValueX = midX + 30;
+    const leftColumnMaxWidth = usableWidth / 2;
+    const rightColumnMaxWidth = usableWidth / 2 - 10;
+
+    // Get all data values
+    const duration = this.getDurationInDays(
+      this.getValue(data.registrationData, 'campStartDate'),
+      this.getValue(data.registrationData, 'campEndDate')
+    );
+
+    const linesLeft = [
+      doc.splitTextToSize(
+        String(this.getValue(data.registrationData, 'campName') || ''),
+        leftColumnMaxWidth
+      ),
+      doc.splitTextToSize(
+        String(this.getValue(data.registrationData, 'campTypeName') || ''),
+        leftColumnMaxWidth
+      ),
+      doc.splitTextToSize(
+        String(this.getValue(data.registrationData, 'location') || ''),
+        leftColumnMaxWidth
+      ),
+      doc.splitTextToSize(duration || '', leftColumnMaxWidth),
+    ];
+
+    const linesRight = [
+      doc.splitTextToSize(
+        this.formatDateTime(this.getValue(data.registrationData, 'campStartDate')) || '',
+        rightColumnMaxWidth
+      ),
+      doc.splitTextToSize(
+        this.formatDateTime(this.getValue(data.registrationData, 'campEndDate')) || '',
+        rightColumnMaxWidth
+      ),
+      doc.splitTextToSize(
+        String(this.getValue(data.staffAllocationData, 'vehicleNo') || ''),
+        rightColumnMaxWidth
+      ),
+    ];
+
+    // Calculate total height of each column (sum of lines * rowHeight)
+    const totalHeightLeft = linesLeft.reduce((acc, line) => acc + line.length * rowHeight, 0);
+    const totalHeightRight = linesRight.reduce((acc, line) => acc + line.length * rowHeight, 0);
+
+    // Take the max of the two column heights to set header height
+    const headerHeight = Math.max(totalHeightLeft, totalHeightRight) + 5; // 5px padding
+
+    // Draw header background
+    doc.setFillColor(204, 204, 204);
+    doc.rect(this.MARGIN_LEFT, startY, usableWidth, headerHeight, 'F');
+
+    // === LEFT COLUMN ===
+    doc.setFontSize(this.FONT_SIZE_NORMAL);
+    const leftLabels = ['Camp Name', 'Camp Type', 'Address', 'Duration'];
+    let leftY = startY + 5;
+
+    leftLabels.forEach((label, idx) => {
+      const valueLines = linesLeft[idx];
+      doc.setFont('Helvetica', 'normal');
+      doc.setTextColor(60, 60, 60);
+      doc.text(label, leftX, leftY);
+      doc.setFont('Helvetica', 'bold');
+      doc.setTextColor(0, 0, 0);
+      doc.text(valueLines, leftValueX, leftY);
+      // Increase Y by value line height (reduce space only used by current value)
+      leftY += valueLines.length * rowHeight;
+    });
+
+    // === RIGHT COLUMN ===
+    const rightLabels = ['Date of Camp', 'Date & Time of Dept.', 'Vehicle Used'];
+    let rightY = startY + 5;
+
+    rightLabels.forEach((label, idx) => {
+      const valueLines = linesRight[idx];
+      doc.setFont('Helvetica', 'normal');
+      doc.setTextColor(60, 60, 60);
+      doc.text(label, midX, rightY);
+      doc.setFont('Helvetica', 'bold');
+      doc.setTextColor(0, 0, 0);
+      doc.text(valueLines, rightValueX, rightY);
+      // Increase Y by height only of this content
+      rightY += valueLines.length * rowHeight;
+    });
+
+    // === QR CODE ===
+    const qrX = this.MARGIN_LEFT + usableWidth - this.QR_CODE_SIZE + 2.5;
+    const qrY = startY + 2;
+    try {
+      const qrUrl = 'https://google.com';
+      const qrCodeServiceUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(qrUrl)}&format=png&bgcolor=cccccc`;
+      doc.addImage(qrCodeServiceUrl, 'PNG', qrX, qrY, 15, 15);
+    } catch (error) {
+      doc.rect(qrX, qrY, 15, 15, 'S');
+      doc.setFontSize(6);
+      doc.setTextColor(100, 100, 100);
+      doc.text('QR', qrX + 5, qrY + 8);
+    }
+
+    // === BORDER LINES ===
+    doc.setDrawColor(163, 163, 163);
+    doc.setLineWidth(0.4);
+    doc.line(this.MARGIN_LEFT, startY, this.MARGIN_LEFT + usableWidth, startY); // top
+    doc.line(
+      this.MARGIN_LEFT,
+      startY + headerHeight,
+      this.MARGIN_LEFT + usableWidth,
+      startY + headerHeight
+    ); // bottom
+    doc.line(midX - 3, startY + 1.8, midX - 3, startY + headerHeight - 1.8); // vertical divider
+
+    // Return bottom Y for next section
+    return startY + headerHeight + 5;
+  }
+
+
+
+
+
+
+/*------- Get Difference Using Date ---------*/
+getDurationInDays(startDate: string, endDate: string): string {
+    if (!startDate || !endDate) return '0 Days';
+    const start = moment(startDate);
+    const end = moment(endDate);
+    const duration = end.diff(start, 'days'); // You can also use 'hours', 'minutes', etc.
+    return `${duration} Day${duration !== 1 ? 's' : ''}`;
+  }
+
+
+// Get all data values
+    const duration = this.getDurationInDays(
+      this.getValue(data.registrationData, 'campStartDate'),
+      this.getValue(data.registrationData, 'campEndDate')
+    );
+
+
+  campEndDate: 'campEndDate',
