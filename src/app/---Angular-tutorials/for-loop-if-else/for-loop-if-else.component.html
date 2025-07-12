@@ -1,0 +1,284 @@
+<!-------------------------------------------------------------------------
+                                  For Loop
+-------------------------------------------------------------------------->
+
+<div class="list-container">
+  <h2>User List</h2>
+
+  <!-- Basic @for usage -->
+
+  @for (user of users; track user.id) {
+  <div class="user-card">{{ user.name }}</div>
+  }
+
+  <br />
+
+  <!-- @for with @empty -->
+  @for (product of products; track product.id) {
+  <div class="product-item">
+    {{ product.name }} - {{ product.price | currency }}
+  </div>
+  } @empty {
+  <div class="empty-state">No products available</div>
+  }
+  <br />
+
+  <!-- @for with index, first, last, even, odd -->
+  <!------------- HTML ------------->
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Task</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (task of tasks; track task.id; let i = $index, first = $first, last =
+      $last, even = $even, odd = $odd) {
+      <tr
+        [class.first-row]="first"
+        [class.last-row]="last"
+        [class.even-row]="even"
+        [class.odd-row]="odd"
+      >
+        <td>{{ i + 1 }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.status }}</td>
+        <td>
+          @if (first) {
+          <span class="badge">Newest</span>
+          } @if (last) {
+          <span class="badge">Oldest</span>
+          }
+          <button>Edit</button>
+        </td>
+      </tr>
+      } @empty {
+      <tr>
+        <td colspan="4" class="empty-message">No tasks found</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<!--------- @for - Basic Syntax (મૂળભૂત સિન્ટેક્સ) ---------->
+@for (item of users; track item.id) {
+<div>{{ item.name }}</div>
+}
+
+<!--------- 1. track expression (ટ્રેક એક્સપ્રેશન): ---------->
+<p>
+  track parameter દરેક item ને uniquely identify કરે છે. આ Angular ને efficient
+  rendering માં help કરે છે.
+</p>
+@for (user of users; track user.id) {
+<div>{{ user.name }}</div>
+}
+
+<!--------- 2. $index (ઇન્ડેક્સ): ---------->
+<P>Current iteration નો index provide કરે છે (0 થી start થાય છે).</P>
+
+@for (item of users; track item.id; let i = $index) {
+<div>Item #{{ i + 1 }}: {{ item.name }}</div>
+}
+
+<!--------- 3. $first (પ્રથમ): ---------->
+<P
+  >Boolean value જે indicate કરે છે કે current item collection નો first item છે
+  કે નહિ.</P
+>
+@for (item of users; track item.id; let first = $first) {
+<div [class.highlighted]="first">{{ item.name }}</div>
+}
+
+<!--------- 4. $last (છેલ્લો): ---------->
+<p>
+  Boolean value જે indicate કરે છે કે current item collection નો last item છે કે
+  નહિ.
+</p>
+@for (item of users; track item.id; let last = $last) {
+<div [class.final-item]="last">{{ item.name }}</div>
+}
+
+<!--------- 5. $even (સમસંખ્યા): ---------->
+<p>
+  Boolean value જે indicate કરે છે કે current iteration even છે કે નહિ (0, 2, 4,
+  etc.).
+</p>
+
+@for (item of users; track item.id; let even = $even) {
+<div [class.even-row]="even">{{ item.name }}</div>
+}
+
+<!--------- 6. $odd (વિષમસંખ્યા): ---------->
+<p>
+  Boolean value જે indicate કરે છે કે current iteration odd છે કે નહિ (1, 3, 5,
+  etc.).
+</p>
+@for (item of users; track item.id; let odd = $odd) {
+<div [class.odd-row]="odd">{{ item.name }}</div>
+}
+
+<!--------- 7. @empty (ખાલી): ---------->
+<p>જે content display થાય જયારે collection empty હોય.</p>
+
+@for (item of users; track item.id) {
+<div>{{ item.name }}</div>
+} @empty {
+<div>No items found</div>
+}
+
+<!--------- 1. Table with Alternating Row Colors ---------->
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (user of users; track user.id; let even = $even, odd = $odd) {
+    <tr [ngClass]="{ 'even-row': even, 'odd-row': odd }">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+    } @empty {
+    <tr>
+      <td colspan="2">No users found</td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+<!--------- 2. Special Treatment for First/Last Items ---------->
+
+<div class="timeline">
+  @for (event of users; track event.id; let first = $first, last = $last) {
+  <div class="event" [class.first-event]="first" [class.last-event]="last">
+    <div class="date">{{ event.date }}</div>
+    <div class="title">{{ event.title }}</div>
+
+    @if (first) {
+    <div class="badge">Latest Update</div>
+    } @if (last) {
+    <div class="badge">First Event</div>
+    }
+  </div>
+  } @empty {
+  <div class="no-events">No events in timeline</div>
+  }
+</div>
+
+<!--------- 2. Special Treatment for First/Last Items ---------->
+<!-- <div class="items-list">
+  @for (item of pagedItems; track item.id; let i = $index) {
+  <div class="item">
+    <span class="item-number">{{ startIndex + i + 1 }}</span>
+    <span class="item-name">{{ item.name }}</span>
+  </div>
+  } @empty {
+  <div class="empty-list">No items to display</div>
+  }
+</div>
+
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="currentPage === 0">Previous</button>
+  <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">
+    Next
+  </button>
+</div> -->
+
+<!--------- 4. E-commerce Product Grid ---------->
+<!-- <div class="products">
+  @for (product of products; track product.id; let even = $even, odd = $odd,
+  first = $first) {
+  <div
+    class="product-card"
+    [class.featured]="first"
+    [class.even]="even"
+    [class.odd]="odd"
+  >
+    <img [src]="product.imageUrl" [alt]="product.name" />
+    <h3>{{ product.name }}</h3>
+    <p class="price">{{ product.price | currency : "INR" }}</p>
+    <button>Add to Cart</button>
+  </div>
+  } @empty {
+  <div class="no-products">
+    <img src="assets/empty-cart.svg" />
+    <p>No products found</p>
+    <button (click)="resetFilters()">Clear Filters</button>
+  </div>
+  }
+</div> -->
+
+<!-------------------------------------------------------------------------
+                                  @If, @Else
+-------------------------------------------------------------------------->
+<!--------- @if --------->
+@if (isLoggedIn) {
+<p>Welcome, User! 🎉</p>
+}
+
+<!--------- @else --------->
+@if (isLoggedIn) {
+<p>Welcome, User! 🎉</p>
+} @else {
+<p>Please log in to continue. 🔐</p>
+}
+
+<!--------- AND (&&) Condition --------->
+@if (isLoggedIn && isAdmin) {
+<p>Welcome, Admin! 🛠️</p>
+} @else {
+<p>Access Denied! 🚫</p>
+}
+
+<!--------- OR (||) Condition --------->
+@if (isPremiumUser || isAdmin) {
+<p>You have premium access! 🌟</p>
+} @else {
+<p>Upgrade to premium for more features! 🚀</p>
+}
+
+<!--------- Basic Condition --------->
+@if (isLoggedIn) {
+<p>Welcome, User!</p>
+} @else {
+<p>Please log in</p>
+}
+
+<!--------- Multiple Conditions with @else if --------->
+
+@if (status === 'success') {
+<div class="success">Operation successful</div>
+} @else if (status === 'warning') {
+<div class="warning">Warning: Please check your input</div>
+} @else if (status === 'error') {
+<div class="error">Error: Operation failed</div>
+} @else {
+<div class="info">Processing...</div>
+}
+
+<!--------- Expression Storing with 'as' Keyword --------->
+<!-- @if (products.length > 0 as hasUsers) {
+  <div>
+    <p>We have {{ users.length }} users</p>
+    <p>Has users: {{ hasUsers }}</p>
+  </div>
+} @else {
+  <p>No users found</p>
+} -->
+
+<!--------- Nested Conditions --------->
+<!-- @if (isLoggedIn()) { @if (hasAdminRole()) {
+<admin-dashboard></admin-dashboard>
+} @else {
+<user-dashboard></user-dashboard>
+} } @else {
+<login-form></login-form>
+} -->

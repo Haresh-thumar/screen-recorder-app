@@ -1,0 +1,76 @@
+<div class="p-4">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <!---------- Start Date ---------->
+      <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12">
+        <div class="mb-3">
+          <label for="startDate" class="form-label">Start Date :</label>
+          <input
+            type="date"
+            class="form-control"
+            id="startDate"
+            formControlName="scheduledFrom"
+          />
+        </div>
+      </div>
+
+      <!---------- Start Date ---------->
+      <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12">
+        <div class="mb-3">
+          <label for="endDate" class="form-label">End Date :</label>
+          <input
+            type="date"
+            class="form-control"
+            id="endDate"
+            formControlName="scheduledTo"
+          />
+        </div>
+      </div>
+
+      <!---------- No. of Visit ---------->
+      <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12">
+        <div class="mb-3">
+          <label for="noOfVisit" class="form-label">No. of Visit :</label>
+          <input
+            type="number"
+            class="form-control"
+            id="noOfVisit"
+            formControlName="noOfVisit"
+          />
+        </div>
+      </div>
+
+      <!---------- First Date ---------->
+      <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12">
+        <div class="mb-3">
+          <label for="noOfVisit" class="form-label">First Date :</label>
+          <input
+            type="number"
+            class="form-control"
+            id="noOfVisit"
+            formControlName="noOfVisit"
+          />
+        </div>
+      </div>
+
+      <!---------- Submit ---------->
+      <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  <br /><br />
+
+  <!---------------------------------- Print Date ------------------------------------->
+  @if(planeDatesStore.length){
+  <div>
+    <h3>Calculated Visit Dates:</h3>
+    <ul>
+      @for(date of planeDatesStore; track date){
+      <li>{{ date }}</li>
+      }
+    </ul>
+  </div>
+  }
+</div>

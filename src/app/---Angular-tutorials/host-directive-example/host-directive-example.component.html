@@ -1,0 +1,48 @@
+<div class="container">
+  <h2 class="text-center text-primary">Registration Form</h2>
+  <br />
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label for="name">Full Name:</label>
+      <input
+        id="name"
+        formControlName="name"
+        appHighlightFormField
+        [highlightColor]="'#e6f7ff'" />
+      <!------- Required Name ------->
+      @if(registrationForm.get('name')?.errors?.['required'] &&
+      registrationForm.get('name')?.touched){
+      <div class="error">Name is required</div>
+      }
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email:</label>
+      <input
+        id="email"
+        formControlName="email"
+        appHighlightFormField
+        [highlightColor]="'#e6f7ff'"
+        [errorColor]="'#ffebeb'" />
+      <!------- Required Email ------->
+      @if(registrationForm.get('email')?.errors?.['required'] &&
+      registrationForm.get('email')?.touched){
+      <div class="error">Email is required</div>
+      }
+      <!------- Valid Email ------->
+      @if(registrationForm.get('email')?.errors?.['email'] &&
+      registrationForm.get('email')?.touched){
+      <div class="error">Please enter a valid email</div>
+      }
+    </div>
+
+    <div class="form-field">
+      <label for="phone">Phone Number:</label>
+      <input id="phone" formControlName="phone" appHighlightFormField />
+    </div>
+
+    <button type="submit" [disabled]="registrationForm.invalid">
+      Register
+    </button>
+  </form>
+</div>

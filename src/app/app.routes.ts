@@ -95,6 +95,13 @@ export const routes: Routes = [
         (m) => m.TableToPdfComponent
       ),
   },
+  {
+    path: 'print-1',
+    loadComponent: () =>
+      import('./---jspdf/print-1/print-1.component').then(
+        (m) => m.Print1Component
+      ),
+  },
 
 
   /*------------------------------------------------------------
@@ -105,6 +112,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./---reactive-forms/dynamic-formcontrols/dynamic-formcontrols.component').then(
         (m) => m.DynamicFormcontrolsComponent
+      ),
+  },
+  {
+    path: 'days-calculation',
+    loadComponent: () =>
+      import('./---reactive-forms/days-calculation/days-calculation.component').then(
+        (m) => m.DaysCalculationComponent
       ),
   },
 
@@ -255,6 +269,90 @@ export const routes: Routes = [
       import(
         './---Angular-tutorials/reuse-template/reuse-template.component'
       ).then((m) => m.ReuseTemplateComponent),
+  },
+  {
+    path: 'content-childeren-template',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/content-childeren-template/content-childeren-template.component'
+      ).then((m) => m.ContentChilderenTemplateComponent),
+  },
+  {
+    path: 'create-embaded-view',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/create-embaded-view/create-embaded-view.component'
+      ).then((m) => m.CreateEmbadedViewComponent),
+  },
+  {
+    path: 'dynamic-component',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/dynamic-component/dynamic-component.component'
+      ).then((m) => m.DynamicComponentComponent),
+  },
+  {
+    path: 'dynamic-template',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/dynamic-template/dynamic-template.component'
+      ).then((m) => m.CardComponent),
+  },
+  {
+    path: 'for-loop-if-else',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/for-loop-if-else/for-loop-if-else.component'
+      ).then((m) => m.ForLoopIfElseComponent),
+  },
+  {
+    path: 'host-decorator',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/host-decorator//host-decorator.component'
+      ).then((m) => m.HostDecoratorComponent),
+  },
+  {
+    path: 'host-directive',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/host-directive-example/host-directive-example.component'
+      ).then((m) => m.HostDirectiveExampleComponent),
+  },
+  {
+    path: 'lazy-loading-defer',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/lazy-loading-defer/lazy-loading-defer.component'
+      ).then((m) => m.LazyLoadingDeferComponent),
+  },
+  {
+    path: 'let-directive',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/let-directive/let-directive.component'
+      ).then((m) => m.LetDirectiveComponent),
+  },
+  {
+    path: 'optional-decorator',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/optional-decorator/optional-decorator.component'
+      ).then((m) => m.OptionalDecoratorComponent),
+  },
+  {
+    path: 'skip-skipself-decorator',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/skip-skipself-decorator/skip-skipself-decorator.component'
+      ).then((m) => m.SkipSkipselfDecoratorComponent),
+  },
+  {
+    path: 'switch-case-template',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/switch-case-template/switch-case-template.component'
+      ).then((m) => m.SwitchCaseTemplateComponent),
   },
 
 

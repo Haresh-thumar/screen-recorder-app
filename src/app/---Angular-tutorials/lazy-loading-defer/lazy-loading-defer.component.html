@@ -1,0 +1,48 @@
+<!------- Defer -------->
+@defer {
+<app-defer-child></app-defer-child>
+}
+
+<!------- Defer + Placeholder -------->
+@defer {
+<app-defer-child></app-defer-child>
+} @placeholder {
+<p>Loading component... ⏳</p>
+}
+
+<!------- Defer + Loading -------->
+
+@defer {
+<app-defer-child></app-defer-child>
+} @loading {
+<p>🔄 Component is loading... Please wait.</p>
+}
+
+<!------- Defer + Error -------->
+@defer {
+<app-defer-child></app-defer-child>
+} @error {
+<p>❌ Error loading component. Please try again later.</p>
+}
+
+<!------- Defer + Placeholder + Loading + Error -------->
+@defer {
+<app-defer-child></app-defer-child>
+} @placeholder {
+<p>🔄 Preparing component... Please wait.</p>
+} @loading {
+<p>⏳ Component is still loading...</p>
+} @error {
+<p>❌ Failed to load component. Try refreshing the page.</p>
+}
+
+<!------- Defer + Timer (5000ms) -------->
+@defer (on timer(5000ms)) {
+<app-defer-child></app-defer-child>
+}
+
+<!------- Defer + when Block -------->
+<button (click)="loadComponent = true">Load Component</button>
+@defer (when loadComponent) {
+<app-defer-child></app-defer-child>
+}

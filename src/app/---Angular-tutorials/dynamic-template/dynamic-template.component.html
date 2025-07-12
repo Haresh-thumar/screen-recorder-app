@@ -1,0 +1,43 @@
+<!--------- Example 1 ---------->
+<ng-template #helloTemplate>
+  <p>Hello, Welcome to Angular!</p>
+</ng-template>
+<ng-container *ngTemplateOutlet="helloTemplate"></ng-container>
+
+<!--------- Example 2 ---------->
+<ng-template #greetingTemplate let-userName>
+  <p>Hello, {{ userName }}!</p>
+</ng-template>
+<ng-container
+  *ngTemplateOutlet="greetingTemplate; context: { $implicit: 'Input' }"
+></ng-container>
+
+<!--------- Example 3 ---------->
+<ng-template #successTemplate>
+  <p class="success">Operation was successful!</p>
+</ng-template>
+<ng-template #errorTemplate>
+  <p class="error">An error occurred. Please try again!</p>
+</ng-template>
+<ng-container
+  *ngTemplateOutlet="status === 'success' ? successTemplate : errorTemplate"
+></ng-container>
+
+<!--------- Example 4 ---------->
+<ng-template #userTemplate let-user>
+  <p>User: {{ user.name }} ({{ user.age }} years old)</p>
+</ng-template>
+@for(person of users; track person ){
+<ng-container>
+  <ng-container
+    *ngTemplateOutlet="userTemplate; context: { $implicit: person }"
+  ></ng-container>
+</ng-container>
+}
+
+<!--------- Example 5 ---------->
+<app-card [customTemplate]="myTemplate"></app-card>
+<ng-template #myTemplate>
+  <h3>Custom Card Content</h3>
+  <p>This is dynamic content from parent component.</p>
+</ng-template>

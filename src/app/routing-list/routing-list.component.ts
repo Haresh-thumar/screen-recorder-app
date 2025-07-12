@@ -1,9 +1,10 @@
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-routing-list',
-  imports: [RouterLink],
+  imports: [RouterLink, NgClass],
   templateUrl: './routing-list.component.html',
   styleUrl: './routing-list.component.scss'
 })
@@ -79,6 +80,16 @@ export class RoutingListComponent {
       title: 'Table to PDF',
       route: '/table-to-pdf'
     },
+    {
+      id: 5,
+      title: 'JS-Autotable Print',
+      route: '/js-autotable-print'
+    },
+    {
+      id: 6,
+      title: 'Print 1',
+      route: '/print-1'
+    },
   ]
 
   reactiveFormsList: any[] = [
@@ -86,7 +97,12 @@ export class RoutingListComponent {
       id: 1,
       title: 'Dynamic Formarray',
       route: '/dynamic-formarray'
-    }
+    },
+    {
+      id: 2,
+      title: 'Days Calculation',
+      route: '/days-calculation'
+    },
   ]
 
   searchList: any[] = [
@@ -181,7 +197,67 @@ export class RoutingListComponent {
       id: 1,
       title: 'Reusable Templates',
       route: '/reusable-templates'
-    }
+    },
+    {
+      id: 2,
+      title: 'Content Childeren Template',
+      route: '/content-childeren-template'
+    },
+    {
+      id: 3,
+      title: 'Create Embaded View',
+      route: '/create-embaded-view'
+    },
+    {
+      id: 4,
+      title: 'Dynamic component',
+      route: '/dynamic-component'
+    },
+    {
+      id: 5,
+      title: 'Dynamic Template',
+      route: '/dynamic-template'
+    },
+    {
+      id: 6,
+      title: 'For-Loop If-Else',
+      route: '/for-loop-if-else'
+    },
+    {
+      id: 7,
+      title: 'Host Decorator',
+      route: '/host-decorator'
+    },
+    {
+      id: 8,
+      title: 'Host Directive',
+      route: '/host-directive'
+    },
+    {
+      id: 9,
+      title: 'Lazy Loading Defer',
+      route: '/lazy-loading-defer'
+    },
+    {
+      id: 10,
+      title: 'Let Directive',
+      route: '/let-directive'
+    },
+    {
+      id: 11,
+      title: 'Optional Decorator',
+      route: '/optional-decorator'
+    },
+    {
+      id: 12,
+      title: 'Skip-Skipself Decorator',
+      route: '/skip-skipself-decorator'
+    },
+    {
+      id: 13,
+      title: 'Switch Case Template',
+      route: '/switch-case-template'
+    },
   ]
 
 }

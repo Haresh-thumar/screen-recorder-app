@@ -1,0 +1,13 @@
+<div class="form-container">
+  <h2>Registration Form</h2>
+  <form [formGroup]="registrationForm">
+    <app-form-section sectionName="personalInfo"></app-form-section>
+    <app-form-section sectionName="contactInfo"></app-form-section>
+    <button
+      type="submit"
+      [disabled]="registrationForm.invalid"
+      (click)="onSubmit()">
+      Submit
+    </button>
+  </form>
+</div>

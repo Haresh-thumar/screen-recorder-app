@@ -1,0 +1,24 @@
+.even-row {
+  background-color: #f5f5f5;
+}
+.odd-row {
+  background-color: #ffffff;
+}
+.first-row {
+  font-weight: bold;
+  border-top: 2px solid blue;
+}
+.last-row {
+  border-bottom: 2px solid blue;
+}
+.empty-message {
+  text-align: center;
+  padding: 20px;
+  color: red;
+}
+.badge {
+  background: #ff9800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: white;
+}

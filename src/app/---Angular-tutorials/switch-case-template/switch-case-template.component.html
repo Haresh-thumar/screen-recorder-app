@@ -1,0 +1,37 @@
+<!-------- Old Syntax -------->
+<div [ngSwitch]="role">
+  <div *ngSwitchCase="'admin'">Admin Panel</div>
+  <div *ngSwitchCase="'user'">User Dashboard</div>
+  <div *ngSwitchDefault>Guest Mode</div>
+</div>
+
+<!-------- New Syntax -------->
+@switch (role) { @case ('admin') {
+<div>Admin Panel</div>
+} @case ('user') {
+<div>User Dashboard</div>
+} @default {
+<div>Guest Mode</div>
+} }
+
+<!-------- User Role-Based Rendering -------->
+<!-- @switch (currentUser.role) { @case ('admin') { <app-admin-dashboard /> } @case
+('manager') { <app-manager-dashboard /> } @default { <app-guest-view /> } } -->
+
+<!-------- User Role-Based Rendering -------->
+<!-- @switch (tab) { @case ('home') { <app-home /> } @case ('profile') {
+<app-profile /> } @case ('settings') { <app-settings /> } } -->
+
+<!-------- User Role-Based Rendering -------->
+<!-- @switch (apiStatus) { @case ('loading') { <spinner /> } @case ('success') {
+<success-message /> } @case ('error') { <error-alert /> } } -->
+
+@switch (userType) { @case ('admin') {
+<p>🔧 Admin Dashboard</p>
+} @case ('editor') {
+<p>✍️ Editor Panel</p>
+} @case ('viewer') {
+<p>👀 Viewer Mode</p>
+} @default {
+<p>🚀 Welcome, Guest!</p>
+} }

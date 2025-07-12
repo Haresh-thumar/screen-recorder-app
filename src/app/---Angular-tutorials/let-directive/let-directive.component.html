@@ -1,0 +1,85 @@
+<section class="container">
+  <!------------------------------------------------------------
+                            Example 1
+  ------------------------------------------------------------->
+  <!--- Name --->
+  @let name = 'John Doe';
+  <!--- Age --->
+  @let age = 30;
+  <!--- IsAdmin --->
+  @let isAdmin = user.role === 'admin';
+  <div>
+    <h2>Welcome, {{ name }}!</h2>
+    <p>Age: {{ age }}</p>
+    @if (isAdmin) {
+    <p>You have admin access</p>
+    }
+  </div>
+  <br />
+  <hr class="border-danger" />
+  <br />
+  <!------------------------------------------------------------
+                            Example 2
+  ------------------------------------------------------------->
+  @let totalPrice = (product.price * product.quantity) / (1 + product.taxRate);
+  <div>
+    <p><span class="fw-bold">Total Price :</span> {{ totalPrice }}</p>
+    <p>
+      <span class="fw-bold">Delivery by :</span>
+      {{ totalPrice > 1000 ? "Express" : "Standard" }}
+    </p>
+  </div>
+  <br />
+  <hr class="border-danger" />
+  <br />
+
+  <!------------------------------------------------------------
+                            Example 3
+  ------------------------------------------------------------->
+  <!-- canEdit -->
+  @let canEdit = (user.role === 'admin' || user.role === 'editor') &&
+  user.isActive;
+  <!-- canDelete -->
+  @let canDelete = user.role === 'admin' && user.isActive &&
+  user.hasDeletionRights;
+
+  <div class="user-actions">
+    @if (canEdit) {
+    <button>Edit</button>
+    } @if (canDelete) {
+    <button class="danger">Delete</button>
+    }
+  </div>
+
+  <br />
+  <hr class="border-danger" />
+  <br />
+  <!------------------------------------------------------------
+                              Total Quantity
+      ------------------------------------------------------------->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(item of cart; track item){
+      <!------ Total Quantity ----->
+      @let totalQty = item.price * item.quantity;
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ totalQty }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <br />
+  <hr class="border-danger" />
+  <br />
+</section>

@@ -1,0 +1,21 @@
+<!-------- Example 1 --------->
+<ng-template #myTemplate>
+  <p>This is a dynamically inserted template!</p>
+</ng-template>
+
+<button (click)="showTemplate()">Show Template</button>
+<div #container></div>
+
+<!-------- Example 2 --------->
+<ng-template #greetingTemplate let-name="name">
+  <p>Hello, {{ name }}!</p>
+</ng-template>
+
+<button (click)="showGreeting('Haresh')">Show Greeting</button>
+<div #containers></div>
+
+<!-------- Example 2 --------->
+<button (click)="toggle()">Toggle Message</button>
+<p *appHighlight="isVisible">This text is conditionally displayed!</p>
+
+<!-------- HTML --------->
