@@ -1,0 +1,127 @@
+<div class="detail-container">
+  <div class="detail-header">
+    <h2>User Details</h2>
+    <div class="actions">
+      <button class="btn btn-secondary" (click)="goBack()">
+        ← Back to Users
+      </button>
+      @if (user()) {
+      <button
+        class="btn btn-primary"
+        [routerLink]="['/users', user()!.id, 'edit']">
+        ✏️ Edit User
+      </button>
+      <button
+        class="btn btn-danger"
+        (click)="deleteUser()"
+        [disabled]="loading()">
+        🗑️ Delete User
+      </button>
+      }
+    </div>
+  </div>
+
+  @if (error()) {
+  <div class="error"><strong>Error:</strong> {{ error() }}</div>
+  } @if (loading()) {
+  <div class="loading">
+    <div class="spinner"></div>
+    <p>Loading user details...</p>
+  </div>
+  } @else if (user()) {
+  <div class="user-detail-card">
+    <div class="user-header">
+      <div class="user-avatar">
+        {{ getInitials(user()!.name) }}
+      </div>
+      <div class="user-basic-info">
+        <h1>{{ user()!.name }}</h1>
+        <p class="user-email">{{ user()!.email }}</p>
+      </div>
+    </div>
+
+    <div class="user-sections">
+      <div class="section">
+        <h3>Contact Information</h3>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="label">📧 Email:</span>
+            <span class="value">
+              <a [href]="'mailto:' + user()!.email">{{ user()!.email }}</a>
+            </span>
+          </div>
+          <div class="info-item">
+            <span class="label">📞 Phone:</span>
+            <span class="value">
+              <a [href]="'tel:' + user()!.phone">{{ user()!.phone }}</a>
+            </span>
+          </div>
+          <div class="info-item">
+            <span class="label">🌐 Website:</span>
+            <span class="value">
+              @if (user()!.website) {
+              <a
+                [href]="getWebsiteUrl(user()!.website)"
+                target="_blank"
+                rel="noopener noreferrer">
+                {{ user()!.website }}
+              </a>
+              } @else {
+              <span class="no-data">Not provided</span>
+              }
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Address Information</h3>
+        <div class="address-card">
+          @if (user()!.address) {
+          <div class="address-content">
+            <p><strong>Street:</strong> {{ user()!.address.street }}</p>
+            @if (user()!.address.suite) {
+            <p><strong>Suite:</strong> {{ user()!.address.suite }}</p>
+            }
+            <p><strong>City:</strong> {{ user()!.address.city }}</p>
+            <p><strong>Zipcode:</strong> {{ user()!.address.zipcode }}</p>
+
+            <div class="address-full">
+              <strong>Full Address:</strong>
+              <address>
+                {{ user()!.address.street }}
+                @if (user()!.address.suite) { ,
+                {{ user()!.address.suite }} }<br />
+                {{ user()!.address.city }}, {{ user()!.address.zipcode }}
+              </address>
+            </div>
+          </div>
+          } @else {
+          <p class="no-data">No address information available</p>
+          }
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Company Information</h3>
+        <div class="company-card">
+          @if (user()!.company.name) {
+          <div class="company-content">
+            <h4>{{ user()!.company.name }}</h4>
+            <p class="company-role">Employee</p>
+          </div>
+          } @else {
+          <p class="no-data">No company information available</p>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  } @else {
+  <div class="not-found">
+    <h3>User Not Found</h3>
+    <p>The user you're looking for doesn't exist or has been deleted.</p>
+    <button class="btn btn-primary" (click)="goBack()">Back to Users</button>
+  </div>
+  }
+</div>

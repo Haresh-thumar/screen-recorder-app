@@ -1,0 +1,19 @@
+<div class="app-container">
+  <nav class="navbar">
+    <div class="nav-brand">
+      <h1>Angular 19 CRUD App</h1>
+    </div>
+    <div class="nav-links">
+      <a routerLink="/users" routerLinkActive="active" class="nav-link"
+        >Users</a
+      >
+      <a routerLink="/users/new" routerLinkActive="active" class="nav-link"
+        >Add User</a
+      >
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

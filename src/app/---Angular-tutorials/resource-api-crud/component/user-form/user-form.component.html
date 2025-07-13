@@ -1,0 +1,144 @@
+<div class="form-container">
+  <div class="form-header">
+    <h2>{{ isEditMode() ? "Edit User" : "Create New User" }}</h2>
+    <button class="btn btn-secondary" (click)="goBack()">
+      ← Back to Users
+    </button>
+  </div>
+
+  @if (error()) {
+  <div class="error"><strong>Error:</strong> {{ error() }}</div>
+  } @if (loading()) {
+  <div class="loading">
+    <div class="spinner"></div>
+    <p>{{ isEditMode() ? "Loading user data..." : "Saving user..." }}</p>
+  </div>
+  }
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-form">
+    <div class="form-section">
+      <h3>Personal Information</h3>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            class="form-control" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Email *</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="email"
+            class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="name">Phone *</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="phone"
+            class="form-control" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="companyName">Website URL *</label>
+        <input
+          type="text"
+          id="companyName"
+          formControlName="website"
+          class="form-control"
+          [class.ng-invalid]="
+            userForm.get('company.website')?.invalid &&
+            userForm.get('company.website')?.touched
+          " />
+      </div>
+
+      <div class="form-row" formGroupName="address">
+        <div class="form-group">
+          <label for="street">Street *</label>
+          <input
+            type="text"
+            id="street"
+            formControlName="street"
+            class="form-control"
+            [class.ng-invalid]="
+              userForm.get('address.street')?.invalid &&
+              userForm.get('address.street')?.touched
+            " />
+        </div>
+        <div class="form-group">
+          <label for="suite">Suite *</label>
+          <input
+            type="text"
+            id="suite"
+            formControlName="suite"
+            class="form-control"
+            [class.ng-invalid]="
+              userForm.get('address.suite')?.invalid &&
+              userForm.get('address.suite')?.touched
+            " />
+        </div>
+        <div class="form-group">
+          <label for="city">City *</label>
+          <input
+            type="text"
+            id="city"
+            formControlName="city"
+            class="form-control"
+            [class.ng-invalid]="
+              userForm.get('address.city')?.invalid &&
+              userForm.get('address.city')?.touched
+            " />
+        </div>
+        <div class="form-group">
+          <label for="zipcode">Zipcode *</label>
+          <input
+            type="text"
+            id="zipcode"
+            formControlName="zipcode"
+            class="form-control"
+            [class.ng-invalid]="
+              userForm.get('address.zipcode')?.invalid &&
+              userForm.get('address.zipcode')?.touched
+            " />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section" formGroupName="company">
+      <h3>Company Information</h3>
+      <div class="form-group">
+        <label for="companyName">Company Name *</label>
+        <input
+          type="text"
+          id="companyName"
+          formControlName="name"
+          class="form-control"
+          [class.ng-invalid]="
+            userForm.get('company.name')?.invalid &&
+            userForm.get('company.name')?.touched
+          " />
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn btn-secondary" (click)="goBack()">
+        Cancel
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="userForm.invalid || loading()">
+        {{ isEditMode() ? "Update User" : "Create User" }}
+      </button>
+    </div>
+  </form>
+</div>

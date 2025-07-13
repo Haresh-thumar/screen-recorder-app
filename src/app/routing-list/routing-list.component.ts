@@ -257,6 +257,11 @@ export class RoutingListComponent {
       title: 'Switch Case Template',
       route: '/switch-case-template'
     },
+    {
+      id: 14,
+      title: 'Resource Api CRUD',
+      route: '/resource-api-crud'
+    },
   ]
 
   otherList: any[] = [

@@ -1,0 +1,40 @@
+<div
+  class="modal"
+  [ngClass]="{ 'd-block': isVisible }"
+  tabindex="-1"
+  role="dialog"
+  style="background-color: rgba(0, 0, 0, 0.5)">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content rounded-3 shadow">
+      <div class="modal-header p-4 pb-2 border-bottom-0">
+        <h3 class="fw-bold mb-0">{{ title }}</h3>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="onClose()"></button>
+      </div>
+      <div class="modal-body p-4 pt-0">
+        <p>{{ message }}</p>
+      </div>
+      <div class="modal-footer flex-column border-top-0">
+        <div class="d-flex w-100 justify-content-center">
+          @if(showConfirm){
+          <button
+            type="button"
+            class="btn btn-danger mx-2"
+            (click)="onConfirm()">
+            Confirm
+          </button>
+          }
+          <button
+            type="button"
+            class="btn btn-secondary mx-2"
+            (click)="onClose()">
+            {{ showConfirm ? "Cancel" : "OK" }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

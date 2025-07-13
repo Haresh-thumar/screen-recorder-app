@@ -1,0 +1,26 @@
+/* Custom styles for modal positioning if needed */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1050; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal.d-block {
+  display: flex; /* Show flex for centering */
+  align-items: center;
+  justify-content: center;
+}
+.modal-dialog {
+  margin: 0.5rem; /* Adjust margin for smaller screens */
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto;
+  }
+}

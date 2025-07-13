@@ -354,6 +354,42 @@ export const routes: Routes = [
         './---Angular-tutorials/switch-case-template/switch-case-template.component'
       ).then((m) => m.SwitchCaseTemplateComponent),
   },
+  /*------- Resource-Api CRUD Route -------*/
+  {
+    path: 'resource-api-crud',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/resource-api-crud/resource-api-crud.component'
+      ).then((m) => m.ResourceApiCrudComponent),
+  },
+  {
+    path: 'users',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/resource-api-crud/component/user-list/user-list.component'
+      ).then((m) => m.UserListComponent),
+  },
+  {
+    path: 'users/new',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/resource-api-crud/component/user-form/user-form.component'
+      ).then((m) => m.UserFormComponent),
+  },
+  {
+    path: 'users/:id/edit',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/resource-api-crud/component/user-form/user-form.component'
+      ).then((m) => m.UserFormComponent),
+  },
+  {
+    path: 'users/:id',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/resource-api-crud/component/user-details/user-details.component'
+      ).then((m) => m.UserDetailsComponent),
+  },
 
   /*------------------------------------------------------------
                               Others
