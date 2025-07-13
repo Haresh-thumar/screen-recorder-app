@@ -1,0 +1,1134 @@
+<!--************************************************************************************************
+                                                Length
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Length</h2>
+  <ul class="print">
+    @for(item of arrayLength; track item){
+    <li>
+      {{ item }}
+    </li>
+    }
+  </ul>
+  <br />
+  <button (click)="arrLength()" class="array-submit">
+    Get Length @if(arrlength){
+    <span class="badge">{{ arrlength }}</span>
+    }
+  </button>
+  <pre></pre>
+  <!----------------------------------------------------------
+                            Signal
+----------------------------------------------------------->
+  <h2 class="heading-2">Signal Length</h2>
+  <ul class="print">
+    @for(item of signallength(); track item){
+    <li>
+      {{ item }}
+    </li>
+    }
+  </ul>
+  <br />
+  <button (click)="signalLength()" class="signal-submit">
+    Get Length @if(sigLength()){
+    <span class="badge">{{ sigLength() }}</span>
+    }
+  </button>
+  <pre></pre>
+  <hr />
+</div>
+<!--************************************************************************************************
+                                                Reverse
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Reverse</h2>
+  <ul class="print">
+    @for(item of arrayReverse; track item){
+    <li>
+      {{ item }}
+    </li>
+    }
+  </ul>
+  <br />
+  <button (click)="arrreverse()" class="array-submit">Reverse</button>
+  <!----------------------------------------------------------
+                            Signal
+----------------------------------------------------------->
+  <h2 class="heading-2">Signal Reverse</h2>
+  <ul class="print">
+    @for(item of signalReverse(); track item){
+    <li>
+      {{ item }}
+    </li>
+    }
+  </ul>
+  <br />
+  <button (click)="signalreverse()" class="signal-submit">Reverse</button>
+  <pre></pre>
+  <hr />
+</div>
+<!--************************************************************************************************
+                                                Sort
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Sort</h2>
+  <ul class="print">
+    @for(item of arraySort; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br />
+  <button (click)="arrSortAscending()" class="array-submit mr-2">Sort
+    Ascending</button>
+  <button (click)="arrSortDescending()" class="array-submit">Sort
+    Descending</button>
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Sort</h2>
+  <ul class="print">
+    @for(item of signalSort(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br />
+  <button (click)="sigSortAscending()" class="signal-submit mr-2">Sort
+    Ascending</button>
+  <button (click)="sigSortDescending()" class="signal-submit">Sort
+    Descending</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Fill
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Fill</h2>
+  <ul class="print">
+    @for(item of arrFill; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br />
+  <button (click)="arrayFill()" class="array-submit">Fill</button>
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Fill</h2>
+  <ul class="print">
+    @for(item of signFill(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br />
+  <button (click)="signalFill()" class="signal-submit">Fill</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Join
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Join</h2>
+  <ul class="print">
+    @for(item of arrJoin; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <p class="mb-0 mt-0">{{ arrJoinResult }}</p>
+  <br />
+  <button (click)="arrayJoin()" class="array-submit">Join</button>
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Join</h2>
+  <ul class="print">
+    @for(item of signJoin(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <p class="mb-0 mt-0">{{ signJoinResult() }}</p>
+  <br />
+  <button (click)="signalJoin()" class="signal-submit">Join</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                toString
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array toString</h2>
+  <ul class="print">
+    @for(item of arrToString; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <p class="mb-0 mt-0">{{ arrToStringResult }}</p>
+  <br />
+  <button (click)="arrayToString()" class="array-submit">ToString</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal toString</h2>
+  <ul class="print">
+    @for(item of signToString(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <p class="mb-0 mt-0">{{ signToStringResult() }}</p>
+  <br />
+  <button (click)="signalToString()" class="signal-submit">ToString</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Pop
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Pop</h2>
+  <ul class="print">
+    @for(item of arrPop; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <p class="mb-0 mt-0">{{ arrPoppedElement }}</p>
+  <br />
+  <button (click)="arrayPop()" class="array-submit">Pop</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Pop</h2>
+  <ul class="print">
+    @for(item of signPop(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <p class="mb-0 mt-0">{{ signPoppedElement() }}</p>
+  <br />
+  <button (click)="signalPop()" class="signal-submit">Pop</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Push
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Push</h2>
+  <ul class="print">
+    @for(item of arrPush; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="arrayPush()" class="array-submit">Push</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Push</h2>
+  <ul class="print">
+    @for(item of signPush(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="signalPush()" class="signal-submit">Push</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Unshift
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Unshift</h2>
+  <ul class="print">
+    @for(item of arrUnshift; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="arrayUnshift()" class="array-submit">Unshift</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Unshift</h2>
+  <ul class="print">
+    @for(item of signUnshift(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="signalUnshift()" class="signal-submit">Unshift</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Concat
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Concat</h2>
+  <ul class="print">
+    @for(item of arrConcat; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <ul class="print">
+    @for(item of otherArr; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <ul class="print mt-0">
+    @for(item of combinedArray; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="arrayConcat()" class="array-submit">Concat</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Concat</h2>
+  <ul class="print">
+    @for(item of signConcat(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <ul class="print">
+    @for(item of otherSign(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <ul class="print mt-0">
+    @for(item of combinedSignal(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="signalConcat()" class="signal-submit">Concat</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Splice
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Splice</h2>
+  <ul class="print">
+    @for(item of arrSplice; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="arraySplice(1, 1)" class="array-submit">Splice Array</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Splice</h2>
+  <ul class="print">
+    @for(item of signSplice(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="signalSplice(1, 1)" class="signal-submit">Splice
+    Signal</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                              lastIndexOf
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array LastIndexOf</h2>
+  <ul class="print">
+    @for(item of arrLastIndexOf; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="text" [(ngModel)]="searchValue">
+  <p>Last index: {{ lastIndex }}</p>
+  <button (click)="findLastIndexArray()" class="array-submit">Find Last
+    Index</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal LastIndexOf</h2>
+  <p>Last index: {{ signalLastIndex() }}</p>
+  <button (click)="findLastIndexSignal()" class="signal-submit">Find Last
+    Index</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                IndexOf
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array IndexOf</h2>
+  <ul class="print">
+    @for(item of arrIndexOf; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="text" [(ngModel)]="arraySearchValue">
+  <p>Index: {{ arrayIndex }}</p>
+  <button (click)="indexArray()" class="array-submit">Find Index</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal IndexOf</h2>
+  <ul class="print">
+    @for(item of signIndexOf(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="text" [value]="signalSearchValue()"
+    (input)="updateSignalSearchValue($event)">
+  <p>Index: {{ signalIndex() }}</p>
+  <button (click)="indexSignal()" class="signal-submit">Find Index</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Slice
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Slice</h2>
+  <ul class="print">
+    @for(item of arrSlice; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [(ngModel)]="arrayStartIndex" placeholder="Start Index"
+    class="mb-1"><br>
+  <input type="number" [(ngModel)]="arrayEndIndex" placeholder="End Index"
+    class="mb-1"><br>
+  <button (click)="sliceArray()" class="array-submit">Slice Array</button>
+  <p>Slice Result: {{ arraySliceResult | json }}</p>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Slice</h2>
+  <ul class="print">
+    @for(item of signSlice(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [value]="signalStartIndex()"
+    (input)="updateSignalStartIndex($event)" placeholder="Start Index"
+    class="mb-1"><br>
+  <input type="number" [value]="signalEndIndex()"
+    (input)="updateSignalEndIndex($event)" placeholder="End Index"
+    class="mb-1"><br>
+  <button (click)="sliceSignal()" class="signal-submit">Slice Signal</button>
+  <p>Slice Result: {{ signalSliceResult() | json }}</p>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Find
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Find</h2>
+  <p>Find first number greater than:</p>
+  <ul class="print">
+    @for(item of arrFind; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [(ngModel)]="arrSearchValue1"
+    placeholder="Enter number"><br><br>
+  <button (click)="findArray()" class="array-submit">Find Number</button>
+  <p>Result: {{ arrayFindResult !== undefined ? arrayFindResult : 'Not found'
+    }}</p>
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Find</h2>
+  <p>Find first number greater than:</p>
+  <ul class="print">
+    @for(item of signFind(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [value]="sigSearchValue1()"
+    (input)="updateSignalSearchValue1($event)"
+    placeholder="Enter number"><br><br>
+  <button (click)="findSignal()" class="signal-submit">Find Number</button>
+  <p>Result: {{ signalFindResult() !== undefined ? signalFindResult() :
+    'Not found' }}</p>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Include
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Includes</h2>
+  <p>Check if number is in the array:</p>
+  <ul class="print">
+    @for(item of arrInclude; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [(ngModel)]="arrSearchValue2"
+    placeholder="Enter number"><br><br>
+  <button (click)="includesArray()" class="array-submit">Check
+    Number</button>
+  <p>Result: {{ arrayIncludesResult ? 'Found' : 'Not found' }}</p>
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Includes</h2>
+  <p>Check if number is in the array:</p>
+  <ul class="print">
+    @for(item of signInclude(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [value]="sigSearchValue2()"
+    (input)="includeSignalValue($event)"
+    placeholder="Enter number"><br><br>
+  <button (click)="includesSignal()" class="signal-submit">Check
+    Number</button>
+  <p>Result: {{ signalIncludesResult() ? 'Found' : 'Not found' }}</p>
+
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Reduce
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Reduce</h2>
+  <p>Sum of numbers greater than:</p>
+  <ul class="print">
+    @for(item of arrFind; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="reduceArray()" class="array-submit">Calculate Sum</button>
+  <p>Result: {{ arrayReduceResult }}</p>
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Reduce</h2>
+  <p>Sum of numbers greater than:</p>
+  <ul class="print">
+    @for(item of signFind(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="reduceSignal()" class="signal-submit">Calculate
+    Sum</button>
+  <p>Result: {{ signalReduceResult() }}</p>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                isArray
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array isArray</h2>
+  <ul class="print">
+    @for(item of regularArray; track item){
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <p>{{regularNonArray}}</p>
+  <br>
+  <button (click)="checkRegularIsArray(regularArray)" class="array-submit">Check
+    Array</button>
+  <button (click)="checkRegularIsArray(regularNonArray)"
+    class="array-submit ml-1">Check
+    Non-Array</button>
+  <p>Is Array: {{ regularIsArrayResult }}</p>
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal isArray</h2>
+  <ul class="print">
+    @for(item of signalArray(); track item){
+    <li>{{ item }}</li>
+    }
+    <p>{{signalNonArray()}}</p>
+  </ul>
+  <br>
+  <button (click)="checkSignalIsArray(signalArray)" class="signal-submit">Check
+    Signal Array</button>
+  <button (click)="checkSignalIsArray(signalNonArray)"
+    class="signal-submit ml-1">Check Signal
+    Non-Array</button>
+  <p>Is Array: {{ signalIsArrayResult() }}</p>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Filter
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Filter</h2>
+  <ul class="print">
+    @for(item of filterArray; track item){
+    <li>{{ item }}</li>
+    }
+  </ul><br>
+  <input type="number" [(ngModel)]="regularFilterThreshold">
+  <br><br>
+  <button (click)="filterRegularArray()" class="array-submit">Filter
+    Array</button>
+  <p>Filtered Result: {{ regularFilterResult.join(', ') }}</p>
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Reduce</h2>
+  <ul class="print">
+    @for(item of signalFilterArray(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul><br>
+  <input type="number" [value]="signalFilterThreshold()"
+    (input)="updateSignalThreshold($event)"> <br><br>
+  <button (click)="filterSignalArray()" class="signal-submit">Filter Signal
+    Array</button>
+  <p>Filtered Result: {{ signalFilterResult().join(', ') }}</p>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Map
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Map</h2>
+  <ul class="print">
+    @for(item of mapArray; track item){
+    <li>{{ item }}</li>
+    }
+  </ul><br>
+  <input type="number" [(ngModel)]="regularMultiplier">
+  <br><br>
+  <button (click)="mapRegularArray()" class="array-submit">Map
+    Array</button>
+  <p>Mapped Result: {{ regularMapResult.join(', ') }}</p>
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Map</h2>
+  <ul class="print">
+    @for(item of signalMapArray(); track item){
+    <li>{{ item }}</li>
+    }
+  </ul><br>
+  <input type="number" [value]="signalMultiplier()"
+    (input)="updateSignalMapThreshold($event)">
+  <br><br>
+  <button (click)="mapSignalArray()" class="signal-submit">Map Signal
+  </button>
+  <p>Mapped Result: {{ signalMapResult().join(', ') }}</p>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Foreach
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array ForEach</h2>
+  <ul class="print">
+    @for(item of forEachArray; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [(ngModel)]="foreachMultiplier">
+  <br><br>
+  <button (click)="forEachRegularArray()" class="array-submit">ForEach
+    Array</button>
+  <p>ForEach Result: {{ regularForEachResult.join(', ') }}</p>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal ForEach</h2>
+  <ul class="print">
+    @for(item of signalForEachArray(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [value]="signalForeachMultiplier()"
+    (input)="updateSignalForEachThreshold($event)">
+  <br><br>
+  <button (click)="forEachSignalArray()" class="signal-submit">ForEach
+    Signal</button>
+  <p>ForEach Result: {{ signalForEachResult().join(', ') }}</p>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Some
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Some</h2>
+  <ul class="print">
+    @for(item of someArray; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [(ngModel)]="someThreshold">
+  <br><br>
+  <button (click)="checkRegularArray()" class="array-submit">Check
+    Array</button>
+  <p>Some Result: {{ regularSomeResult ? 'Yes' : 'No' }}</p>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Some</h2>
+  <ul class="print">
+    @for(item of signalSomeArray(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [value]="signalSomeThreshold()"
+    (input)="updateSignalSomeMethod($event)">
+  <br><br>
+  <button (click)="checkSomeSignalArray()" class="signal-submit">Check
+    Signal</button>
+  <p>Some Result: {{ signalSomeResult() ? 'Yes' : 'No' }}</p>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Every
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Every</h2>
+  <ul class="print">
+    @for(item of everyArray; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [(ngModel)]="everyThreshold">
+  <br><br>
+  <button (click)="verifyEveryArray()" class="array-submit">Check
+    Array</button>
+  <p>Every Result: {{ everyResult ? 'Yes' : 'No' }}</p>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Every</h2>
+  <ul class="print">
+    @for(item of everySignalArray(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <input type="number" [value]="everySignalThreshold()"
+    (input)="updateReactiveThreshold($event)">
+  <br><br>
+  <button (click)="verifyReactiveArray()" class="signal-submit">Check
+    Signal</button>
+  <p>Every Result: {{ everySignalResult() ? 'Yes' : 'No' }}</p>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Entries
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Entries</h2>
+  <ul class="print">
+    @for(item of entriesArray; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="entriesMethod()" class="array-submit">Array
+    Entries</button>
+  <ul>
+    @for(entry of entriesResult; track entry) {
+    <li>Index: {{ entry[0] + 1}}, Value: {{ entry[1] }}</li>
+    }
+  </ul>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Entries</h2>
+  <ul class="print">
+    @for(item of entriesSignal(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="displayReactiveEntries()" class="signal-submit">Signal
+    Entries</button>
+  <ul>
+    @for(entry of entriesSignalResult(); track entry) {
+    <li>Index: {{ entry[0] + 1 }}, Value: {{ entry[1] }}</li>
+    }
+  </ul>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Keys
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Keys</h2>
+  <ul class="print">
+    @for(item of keysArray; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="keysMethod()" class="array-submit">Array
+    Keys</button>
+  <ul>
+    @for(key of keyArrayResult; track key) {
+    <li>Key: {{ key + 1 }}</li>
+    }
+  </ul>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Keys</h2>
+  <ul class="print">
+    @for(item of keysSignal(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="showDynamicKeys()" class="signal-submit">Signal
+    Keys</button>
+  <ul>
+    @for(key of keySignalResult(); track key) {
+    <li>Key: {{ key + 1 }}</li>
+    }
+  </ul>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Values
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Values</h2>
+  <ul class="print">
+    @for(item of valuesArray; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="arrayValuesMethod()" class="array-submit">Show Array
+    Values</button>
+  <ul>
+    @for(value of valuesArrayResult; track value) {
+    <li>Value: {{ value }}</li>
+    }
+  </ul>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Values</h2>
+  <ul class="print">
+    @for(item of valuesSignal(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="signalValuesMethod()" class="signal-submit">Show Signal
+    Values</button>
+  <ul>
+    @for(value of valuesSignalResult(); track value) {
+    <li>Value: {{ value }}</li>
+    }
+  </ul>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                From
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array From</h2>
+  <ul class="print">
+    @for(item of fromArray; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="arrayFromMethod()" class="array-submit">Show Array
+    Values</button>
+  <br>
+  <ul class="print">
+    @for(item of arrayFromResult; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal From</h2>
+  <ul class="print">
+    @for(item of fromSignal(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="signalFromMethod()" class="signal-submit">Show Signal
+    Values</button>
+  <br>
+  <ul>
+    @for(value of signalFromResult(); track value) {
+    <li>Value: {{ value }}</li>
+    }
+  </ul>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                toLocalString
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array toLocaleString</h2>
+  <ul class="print">
+    @for(item of toLocalStringArray; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul><br>
+  @if(formattoLocalStringArray.length > 0){
+  <ul class="print">
+    @for(item of formattoLocalStringArray; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul><br>
+  }
+  <button (click)="formatArray()" class="array-submit">Format Numbers</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal toLocalString</h2>
+  <ul class="print">
+    @for(item of toLocalStringSignal(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  @if(formattoLocalStringSignal().length > 0){
+  <ul class="print">
+    @for(item of formattoLocalStringSignal(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul><br>
+  }
+  <button (click)="formatSignalArray()" class="signal-submit">Show Signal
+    Values</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                Flat
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array Flat</h2>
+  <pre>{{ flatArray | json }}</pre><br>
+  <pre>{{ flattenedArrayResult | json }}</pre>
+  <br>
+  <button (click)="flattenArray()" class="array-submit">Flatten Numbers</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal Flat</h2>
+  <pre>{{ flatSignal() | json }}</pre><br>
+  <pre>{{ flattenedSignalResult() | json }}</pre>
+  <br>
+  <button (click)="flattenSignal()" class="signal-submit">Show Signal
+    Values</button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                FlatMap
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array FlatMap</h2>
+  <pre>{{ flatMapArray | json }}</pre><br>
+  <pre>{{ flattenedMapArrayResult | json }}</pre>
+  <br>
+  <button (click)="flatMapArrayMethod()" class="array-submit">Flatten
+    Array</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal FlatMap</h2>
+  <pre>{{ flatMapSignal() | json }}</pre><br>
+  <pre>{{ flattenedMapSignalResult() | json }}</pre>
+  <br>
+  <button (click)="flattenSignalMethod()" class="signal-submit">Flatten Signal
+  </button>
+  <hr />
+</div>
+
+<!--************************************************************************************************
+                                                copyWithin
+*************************************************************************************************-->
+<!----------------------------------------------------------
+                            Array
+----------------------------------------------------------->
+<div>
+  <h2 class="heading">Array copyWithin</h2>
+  <ul class="print">
+    @for(item of copyWithinArray; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul><br>
+  <ul class="print">
+    @for(item of copyWithinedArrayResult; track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="copyWithinArrayMethod()" class="array-submit">copyWithin
+    Array</button>
+
+  <!----------------------------------------------------------
+                            Signal
+  ----------------------------------------------------------->
+  <h2 class="heading-2">Signal copyWithin</h2>
+  <ul class="print">
+    @for(item of copyWithinSignal(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul><br>
+  <ul class="print">
+    @for(item of copyWithinSignalResult(); track item) {
+    <li>{{ item }}</li>
+    }
+  </ul>
+  <br>
+  <button (click)="copyWithinSignalMethod()" class="signal-submit">copyWithin
+    Signal
+  </button>
+  <hr />
+</div>

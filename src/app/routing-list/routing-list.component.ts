@@ -191,6 +191,19 @@ export class RoutingListComponent {
     },
   ]
 
+  csvJsonExcelList: any[] = [
+    {
+      id: 1,
+      title: 'CSV to JSON',
+      route: '/csv-to-json'
+    },
+    {
+      id: 2,
+      title: 'JSON to CSV',
+      route: '/json-to-csv'
+    },
+  ]
+
   angularTutorialsList: any[] = [
     {
       id: 1,
@@ -261,6 +274,11 @@ export class RoutingListComponent {
       id: 14,
       title: 'Resource Api CRUD',
       route: '/resource-api-crud'
+    },
+    {
+      id: 15,
+      title: 'Signal vs Array Methods',
+      route: '/signal-array-methods'
     },
   ]
 

@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>JSON to CSV Converter</h2>
+
+  <div class="controls">
+    <div>
+      <label>
+        Delimiter:
+        <select [(ngModel)]="delimiter">
+          <option value=",">Comma (,)</option>
+          <option value=";">Semicolon (;)</option>
+          <option value="\t">Tab (\t)</option>
+          <option value="|">Pipe (|)</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="file-upload">
+      <label for="jsonFileInput" class="upload-button">
+        Upload JSON File
+      </label>
+      <input
+        id="jsonFileInput"
+        type="file"
+        accept=".json,application/json"
+        (change)="onFileSelected($event)"
+        style="display: none" />
+    </div>
+
+    <button (click)="convertJsonToCsv()" [disabled]="!jsonInput">
+      Convert
+    </button>
+    <button (click)="clearAll()">Clear All</button>
+  </div>
+
+  @if (isLoading) {
+  <div class="loading">Processing...</div>
+  } @if (errorMessage) {
+  <div class="error">{{ errorMessage }}</div>
+  }
+
+  <div class="columns">
+    <div class="column">
+      <h3>JSON Input</h3>
+      <textarea
+        [(ngModel)]="jsonInput"
+        placeholder='Paste JSON array here (e.g., [{"name":"John","age":30},...])'
+        rows="15"></textarea>
+    </div>
+
+    <div class="column">
+      <h3>CSV Output</h3>
+      @if (csvOutput) {
+      <div class="csv-actions">
+        <button (click)="copyToClipboard()">Copy CSV</button>
+        <button (click)="downloadCsv()">Download CSV</button>
+      </div>
+      }
+      <pre>{{ csvOutput || "CSV output will appear here..." }}</pre>
+    </div>
+  </div>
+</div>

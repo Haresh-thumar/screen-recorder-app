@@ -261,6 +261,22 @@ export const routes: Routes = [
   },
 
   /*------------------------------------------------------------
+                          CSV-JSON-EXCEL
+  ------------------------------------------------------------*/
+  {
+    path: 'csv-to-json', loadComponent: () =>
+      import(
+        './---csv-json-excel/csv-to-json/csv-to-json.component'
+      ).then((m) => m.CsvToJsonComponent),
+  },
+  {
+    path: 'json-to-csv', loadComponent: () =>
+      import(
+        './---csv-json-excel/json-to-csv/json-to-csv.component'
+      ).then((m) => m.JsonToCsvComponent),
+  },
+
+  /*------------------------------------------------------------
                         Angular Tutorials
   ------------------------------------------------------------*/
   {
@@ -353,6 +369,13 @@ export const routes: Routes = [
       import(
         './---Angular-tutorials/switch-case-template/switch-case-template.component'
       ).then((m) => m.SwitchCaseTemplateComponent),
+  },
+  {
+    path: 'signal-array-methods',
+    loadComponent: () =>
+      import(
+        './---Angular-tutorials/signal-vs-array-methods/signal-array-methods.component'
+      ).then((m) => m.ArrayMethodsComponent),
   },
   /*------- Resource-Api CRUD Route -------*/
   {

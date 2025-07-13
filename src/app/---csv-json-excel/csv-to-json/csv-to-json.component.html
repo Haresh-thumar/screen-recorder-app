@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>CSV to JSON Converter</h2>
+
+  <div class="controls">
+    <div>
+      <label>
+        <input type="checkbox" [(ngModel)]="hasHeader" />
+        CSV contains header row
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Delimiter:
+        <input type="text" [(ngModel)]="delimiter" size="1" maxlength="1" />
+      </label>
+    </div>
+
+    <div class="file-upload">
+      <label for="csvFileInput" class="upload-button">
+        {{ fileName ? fileName : "Choose CSV File" }}
+      </label>
+      <input
+        id="csvFileInput"
+        type="file"
+        accept=".csv"
+        (change)="onFileSelected($event)"
+        style="display: none" />
+    </div>
+
+    <button (click)="clearAll()">Clear All</button>
+  </div>
+
+  @if (isLoading) {
+  <div class="loading">Processing file...</div>
+  } @if (errorMessage) {
+  <div class="error">{{ errorMessage }}</div>
+  }
+
+  <div class="output-section">
+    @if (jsonOutput) {
+    <div class="json-actions">
+      <button (click)="copyToClipboard()">Copy JSON</button>
+      <button (click)="downloadJson()">Download JSON</button>
+    </div>
+    <pre>{{ jsonOutput }}</pre>
+    } @else {
+    <div class="placeholder">
+      <p>Upload a CSV file to convert it to JSON</p>
+      <p>JSON output will appear here after conversion</p>
+    </div>
+    }
+  </div>
+</div>
