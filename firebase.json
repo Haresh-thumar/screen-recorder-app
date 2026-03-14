@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/angular-19-dev-tools",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
