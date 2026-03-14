@@ -1,12 +1,25 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  provideZoneChangeDetection,
+} from "@angular/core";
+import { provideRouter } from "@angular/router";
 
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import { provideAnimations } from '@angular/platform-browser/animations';
-import { routes } from './app.routes';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
+import { provideAnimations } from "@angular/platform-browser/animations";
+import { routes } from "./app.routes";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimations(), provideHttpClient(), provideHttpClient(withInterceptorsFromDi()),
-  importProvidersFrom(ReactiveFormsModule)]
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideAnimations(),
+    provideHttpClient(),
+    provideHttpClient(withInterceptorsFromDi()),
+    importProvidersFrom(ReactiveFormsModule),
+  ],
 };
