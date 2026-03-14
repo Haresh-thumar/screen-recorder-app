@@ -1,0 +1,73 @@
+<form [formGroup]="form" (ngSubmit)="debug()">
+  <button type="button" class="btn btn-primary mb-3" (click)="addRow()">
+    Add Row
+  </button>
+
+  <div formArrayName="rows">
+    @for(row of rowsArray.controls; track row; let i = $index){
+    <div [formGroupName]="i" class="mb-3 p-3 border rounded">
+      <div class="row g-2 align-items-center">
+        <div class="col-md-4">
+          <select
+            class="form-select"
+            formControlName="userId"
+            [ngClass]="{'is-invalid': row.get('userId')?.hasError('duplicateRow')}"
+          >
+            <option value="">Select User</option>
+            @for(u of userOptions; track u;){
+            <option [value]="u.id">{{ u.name }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <select
+            class="form-select"
+            formControlName="roleId"
+            [ngClass]="{'is-invalid': row.get('roleId')?.hasError('duplicateRow')}"
+          >
+            <option value="">Select Role</option>
+            @for(r of roleOptions; track r;){
+            <option [value]="r.id">{{ r.name }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Code"
+            formControlName="code"
+            [ngClass]="{'is-invalid': row.get('code')?.hasError('duplicateRow')}"
+          />
+        </div>
+
+        <div class="col-md-1">
+          <button type="button" class="btn btn-danger" (click)="removeRow(i)">
+            Remove
+          </button>
+        </div>
+      </div>
+
+      <!-- per-row duplicate message -->
+      @if(row.hasError('duplicateRow')){
+      <div class="text-danger mt-2">
+        ❌ Duplicate combination found! Change values.
+      </div>
+      }
+    </div>
+    }
+  </div>
+
+  <!-- form array level message -->
+  @if(rowsArray.hasError('duplicateSelected')){
+  <div class="alert alert-warning mt-3">
+    ⚠ Multiple rows have the same combination. Each row must be unique.
+  </div>
+  }
+
+  <button type="button" class="btn btn-secondary mt-3" (click)="debug()">
+    Debug Console
+  </button>
+</form>

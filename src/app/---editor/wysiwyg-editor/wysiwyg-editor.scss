@@ -1,0 +1,478 @@
+@import "highlight.js/styles/atom-one-dark.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap");
+
+::selection {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+.wysiwyg-container {
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  border: 1px solid #f1c263;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  box-sizing: border-box;
+
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+    background-color: #fff0d1;
+    border-bottom: 1px solid #f1c263;
+    align-items: center;
+
+    select {
+      padding: 5px;
+      border: 1px solid #f1c263;
+      border-radius: 8px;
+      background: white;
+      height: 32px;
+      font-size: 14px !important;
+    }
+
+    .toolbar-btn {
+      background: white;
+      border: 1px solid #f1c263;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 4px 8px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #f1c263;
+      }
+
+      &.active {
+        background-color: #f1c263;
+        border-color: #f1c263;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      svg {
+        fill: #333;
+      }
+    }
+
+    // Color Picker Wrapper
+    .color-picker-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 6px;
+      background: white;
+      border: 1px solid #f1c263;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+
+      &:focus-within {
+        border-color: #f1c263;
+        box-shadow: 0 0 0 2px rgba(241, 194, 99, 0.2);
+      }
+
+      input[type="color"] {
+        width: 24px;
+        height: 24px;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        background: none;
+        border-radius: 4px;
+
+        &::-webkit-color-swatch-wrapper {
+          padding: 0;
+        }
+
+        &::-webkit-color-swatch {
+          border: 1px solid #ddd;
+          border-radius: 4px;
+        }
+      }
+
+      input[type="text"] {
+        width: 55px;
+        border: none;
+        outline: none;
+        font-family: "Roboto Mono", monospace;
+        font-size: 13px;
+        color: #444;
+        text-transform: uppercase;
+        background: transparent;
+        padding: 0;
+      }
+
+      &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+
+    .image-upload {
+      background: white;
+      border: 1px solid #f1c263;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 4px 8px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #f1c263;
+      }
+
+      &.active {
+        background-color: #f1c263;
+        border-color: #f1c263;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      margin: 0; // Reset margin since it's a label acting as button
+    }
+
+    .link-input-group {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+
+      input {
+        height: 32px;
+        padding: 0 8px;
+        border: 1px solid #f1c263;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+    }
+
+    button[disabled],
+    select[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .image-upload.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .code-block-controls {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      margin-left: auto; // Push to right if space allows
+
+      @media (max-width: 768px) {
+        margin-left: 0;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .editor-wrapper {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    background: white;
+
+    // Custom thin scrollbar
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+
+      &:hover {
+        background: #555;
+      }
+    }
+
+    // Firefox scrollbar
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+  }
+
+  .editor {
+    min-height: 100%;
+    padding: 20px;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #333; // Default text color
+
+    &:focus-visible {
+      outline: none !important;
+    }
+
+    // Explicit Heading Styles
+    h1 {
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    h4 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    h5 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    h6 {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 0.1rem !important;
+    }
+
+    // Apply Roboto Mono to code blocks
+    pre {
+      background-color: #282c34 !important; // Force dark background
+      color: #abb2bf !important; // Force light text
+      padding: 15px !important;
+      border-radius: 12px;
+      line-height: 1.5 !important;
+      font-family: "Roboto Mono", monospace;
+      overflow-x: hidden; // Hide horizontal scroll
+      white-space: pre-wrap; // Wrap text
+      word-wrap: break-word; // Break long words
+      line-height: 1.5 !important;
+
+      code {
+        font-family: "Roboto Mono", monospace;
+        background-color: transparent !important;
+        color: inherit !important;
+        line-height: 1.5 !important;
+      }
+    }
+
+    code.hljs {
+      padding: 3px 5px !important;
+    }
+
+    // Images
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block; // Prevent inline spacing issues
+      margin: 10px 0;
+    }
+
+    // Blockquote
+    blockquote {
+      border-left: 4px solid #ccc;
+      margin: 10px 0;
+      padding-left: 10px;
+      color: #666;
+    }
+  }
+
+  .preview {
+    padding: 10px;
+    background-color: #f8f9fa;
+    min-height: 100%; // Ensure it takes full height of wrapper
+    overflow: auto;
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 600px) {
+  .wysiwyg-container .toolbar {
+    justify-content: center;
+
+    select,
+    button,
+    .color-picker-wrapper {
+      flex-grow: 1;
+    }
+  }
+}
+
+// Print Styles for PDF Export
+@media print {
+  // Hide everything initially
+  body * {
+    visibility: hidden;
+  }
+
+  // Reset standard page styles that might interfere
+  html,
+  body {
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    overflow: visible !important;
+  }
+
+  // Ensure the container is visible and positioned correctly
+  .wysiwyg-container,
+  .wysiwyg-container * {
+    visibility: visible;
+  }
+
+  .wysiwyg-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    display: block !important;
+  }
+
+  // Hide the toolbar explicitly
+  .toolbar {
+    display: none !important;
+  }
+
+  // Adjust editor wrapper
+  .editor-wrapper {
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  // Adjust editor content
+  .editor {
+    height: auto !important;
+    width: 100% !important;
+    padding: 0 !important; // Let page margins handle padding
+    margin: 0 !important;
+    border: none !important;
+    overflow: visible !important;
+    font-size: 12pt; // Standard print font size, but allow inline styles to override
+
+    // Force browser to print background colors and images
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+
+    // Handle page breaks and sizes
+    h1 {
+      font-size: 20pt;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      font-size: 18pt;
+      margin-bottom: 0.5em;
+    }
+    h3 {
+      font-size: 16pt;
+      margin-bottom: 0.5em;
+    }
+    h4 {
+      font-size: 14pt;
+      margin-bottom: 0.5em;
+    }
+    h5 {
+      font-size: 12pt;
+      margin-bottom: 0.5em;
+    }
+    h6 {
+      font-size: 10pt;
+      margin-bottom: 0.5em;
+    }
+
+    p,
+    ol,
+    li,
+    ul,
+    pre,
+    code {
+      font-size: 8pt;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    li,
+    blockquote,
+    img,
+    table {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    // Ensure images and tables fit
+    img,
+    table {
+      max-width: 100% !important;
+      width: auto !important; // Maintain aspect ratio for images
+      height: auto !important;
+    }
+
+    // Specifically for tables to fill width if needed but not overflow
+    table {
+      width: 100% !important;
+    }
+
+    // Ensure preformatted code blocks look just like the editor (Dark Theme)
+    pre {
+      white-space: pre-wrap !important; // Wrap long lines in print
+      word-wrap: break-word !important;
+      background-color: #282c34 !important; // Force dark background
+      color: #abb2bf !important; // Force light text
+      border-radius: 12px !important;
+      border: 1px solid #ccc !important;
+    }
+
+    // Preserve all other specific colors/backgrounds set by the user
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
+
+  // Hide preview panel if it was open
+  .preview {
+    display: none !important;
+  }
+}

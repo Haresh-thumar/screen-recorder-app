@@ -1,0 +1,63 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+
+.actions {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+
+  .search-input {
+    min-width: 300px;
+    padding: 6px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    &:focus,
+    &:active {
+      outline: none;
+      border: 1px solid #8d8d8d;
+    }
+  }
+  .clear-btn {
+    background-color: #FF4747;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 3px 15px;
+    cursor: pointer;
+  }
+}
+
+.pagination {
+  margin-top: 30px;
+  gap: 20px;
+  .prev-btn {
+    background-color: #224dc4;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  .next-btn {
+    background-color: #224dc4;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+}

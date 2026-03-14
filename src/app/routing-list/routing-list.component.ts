@@ -90,6 +90,11 @@ export class RoutingListComponent {
       title: 'Print 1',
       route: '/print-1'
     },
+    {
+      id: 7,
+      title: 'Label Print',
+      route: '/label-print'
+    },
   ]
 
   reactiveFormsList: any[] = [
@@ -102,6 +107,11 @@ export class RoutingListComponent {
       id: 2,
       title: 'Days Calculation',
       route: '/days-calculation'
+    },
+    {
+      id: 3,
+      title: 'Unique Validator Formarray',
+      route: '/unique-validator'
     },
   ]
 
@@ -180,6 +190,11 @@ export class RoutingListComponent {
       id: 3,
       title: 'Editable Textarea',
       route: '/editable-textarea'
+    },
+    {
+      id: 4,
+      title: 'WYSIWYG Editor',
+      route: '/wysiwyg-editor'
     },
   ]
 
@@ -292,6 +307,21 @@ export class RoutingListComponent {
       id: 2,
       title: 'Multiselect Dropdown',
       route: '/multiselect-dropdown'
+    },
+    {
+      id: 3,
+      title: 'SVG to Image',
+      route: '/svg-to-img'
+    },
+    {
+      id: 4,
+      title: 'Barcode QRCode',
+      route: '/barcode-qrcode'
+    },
+    {
+      id: 5,
+      title: 'Table API Call',
+      route: '/table-api-call'
     },
   ]
 

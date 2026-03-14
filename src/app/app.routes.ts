@@ -102,6 +102,13 @@ export const routes: Routes = [
         (m) => m.Print1Component
       ),
   },
+  {
+    path: 'label-print',
+    loadComponent: () =>
+      import('./---jspdf/square-print/square-print').then(
+        (m) => m.SquarePrint
+      ),
+  },
 
 
   /*------------------------------------------------------------
@@ -120,6 +127,11 @@ export const routes: Routes = [
       import('./---reactive-forms/days-calculation/days-calculation.component').then(
         (m) => m.DaysCalculationComponent
       ),
+  },
+  {
+    path: 'unique-validator',
+    loadComponent: () =>
+      import('./---reactive-forms/unique-validator-formarray/unique-validator-formarray').then((m) => m.UniqueValidatorFormarray),
   },
 
   /*------------------------------------------------------------
@@ -222,6 +234,12 @@ export const routes: Routes = [
       import(
         './---editor/editable-textarea/editable-textarea.component'
       ).then((m) => m.EditableTextareaComponent),
+  },
+  {
+    path: 'wysiwyg-editor', loadComponent: () =>
+      import(
+        './---editor/wysiwyg-editor/wysiwyg-editor'
+      ).then((m) => m.WysiwygEditor),
   },
 
   /*------------------------------------------------------------
@@ -427,5 +445,20 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./---other/custom-multiselect-dropdown/custom-multiselect-dropdown.component').then((m) => m.CustomMultiselectDropdownComponent),
   },
-
+  {
+    path: 'svg-to-img',
+    loadComponent: () =>
+      import('./---other/svg-to-img/svg-to-img').then((m) => m.SvgToImg),
+  },
+  {
+    path: 'barcode-qrcode',
+    loadComponent: () =>
+      import('./---other/barcode-qrcode/barcode-qrcode').then((m) => m.BarcodeQrcode),
+  },
+  {
+    path: 'table-api-call',
+    loadComponent: () =>
+      import('./---other/table/table').then((m) => m.Table),
+  },
+  
 ];

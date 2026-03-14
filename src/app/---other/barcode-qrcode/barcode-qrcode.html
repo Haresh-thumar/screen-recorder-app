@@ -1,0 +1,18 @@
+<div class="g-2">
+  <input
+    [(ngModel)]="value"
+    class="form-control d-block"
+    placeholder="Enter barcode value"
+  />
+  <button (click)="previewCanvas()" class="btn btn-warning mt-3">
+    Show preview
+  </button>
+  <button (click)="downloadPdf()" class="btn btn-success mt-3 ms-3">
+    Download PDF (barcode)
+  </button>
+
+  <!-------- Show Barcode -------->
+  <div class="d-block mt-3">
+    <img [src]="this.dataUrl" alt="" width="200px" />
+  </div>
+</div>

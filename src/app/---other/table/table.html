@@ -1,0 +1,30 @@
+<div class="actions">
+  <input class="search-input" type="text" placeholder="Search..." [(ngModel)]="search" />
+  <button class="clear-btn" (click)="clearFilter()">Clear Filter</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (u of allUsers | filter: search : 'login'; track u.id; let i = $index) {
+    <tr>
+      <td>{{ ($index + 1) + ((pageNo - 1) * records)}}</td>
+      <td>{{ u.login }}</td>
+      <td>{{ u.node_id }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+<div class="pagination">
+  <button class="prev-btn" (click)="prevRecord()">Prev</button>
+  <span>Page {{ pageNo }}</span>
+  <button class="next-btn" (click)="nextRecord()">Next</button>
+</div>
