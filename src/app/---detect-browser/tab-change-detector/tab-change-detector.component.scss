@@ -1,0 +1,106 @@
+.tab-detector {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .status.active {
+      background: #d4edda;
+      border: 2px solid #c3e6cb;
+      color: #155724;
+    }
+
+    .status.inactive {
+      background: #f8d7da;
+      border: 2px solid #f5c6cb;
+      color: #721c24;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 10px;
+      animation: pulse 2s infinite;
+    }
+
+    .status.active .indicator {
+      background: #28a745;
+    }
+
+    .status.inactive .indicator {
+      background: #dc3545;
+    }
+
+    .stats p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .activity-log {
+      background: white;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .log-container {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      padding: 10px;
+    }
+
+    .log-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
+      margin: 4px 0;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .log-entry.focus {
+      background: #e8f5e8;
+      border-left: 3px solid #28a745;
+    }
+
+    .log-entry.blur {
+      background: #fde8e8;
+      border-left: 3px solid #dc3545;
+    }
+
+    .timestamp {
+      font-weight: bold;
+      color: #666;
+    }
+
+    .event-type {
+      font-weight: bold;
+    }
+
+    .details {
+      color: #888;
+      font-style: italic;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }

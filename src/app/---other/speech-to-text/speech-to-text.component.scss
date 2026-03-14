@@ -1,0 +1,117 @@
+.speech-card {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: none;
+}
+
+/* --- Input Controls (Mic/Clear) --- */
+.input-controls {
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+/* Clear Button (The 'x' icon) */
+.clear-btn {
+  color: #6c757d;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.clear-btn:hover:not(:disabled) {
+  color: #dc3545;
+  cursor: pointer;
+}
+
+.clear-btn:disabled {
+  opacity: 0.5;
+}
+
+/* Microphone Button */
+.mic-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #116bfd; 
+  color: #fff;             
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 0;
+  line-height: 0;
+}
+
+.mic-btn .mic-icon {
+  width: 1em;
+  height: 1em;
+  display: block;
+  fill: currentColor !important;
+  vertical-align: middle;
+}
+
+.exclamation-icon {
+    min-width: 16px;
+}
+
+.mic-btn:hover:not(.listening-active) { background-color: #0043af; }
+
+/* Active Listening State (Red Glow/Pulse) */
+.listening-active {
+  background-color: #dc3545; /* Red */
+  animation: pulse-red 1.5s infinite;
+}
+
+.listening-active:hover {
+  background-color: #c82333;
+}
+
+/* Red Pulse Animation */
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+/* --- Status Messages --- */
+.status-message {
+  font-weight: bold;
+}
+
+.status-listening {
+  background-color: #ffe0b2;
+  color: #ef6c00;
+  border: 1px solid #ff9800;
+}
+
+.status-stopped {
+  background-color: #e6f7ff;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+/* Responsive Adjustments for small screens */
+@media (max-width: 576px) {
+  .speech-card {
+    padding: 15px !important;
+  }
+}

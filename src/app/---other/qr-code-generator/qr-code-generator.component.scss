@@ -1,0 +1,48 @@
+/* Custom styles */
+.bg-gradient {
+  background-image: linear-gradient(to bottom right, #f3e8ff, #e0e7ff, #e0f2fe);
+}
+
+.text-gradient {
+  background-image: linear-gradient(to right, #9333ea, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-purple-50 {
+  background-color: #faf5ff;
+}
+
+.rounded-4 {
+  border-radius: 1rem !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.nav-tabs .nav-link {
+  transition: all 0.2s;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: rgba(147, 51, 234, 0.1);
+  border-bottom-color: #9333ea;
+  color: #9333ea;
+}
+
+.form-control-lg {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.btn-light {
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.btn-light:hover {
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+}

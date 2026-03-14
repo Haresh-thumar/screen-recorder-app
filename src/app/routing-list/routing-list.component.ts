@@ -173,6 +173,16 @@ export class RoutingListComponent {
       title: 'Detect Display Screen Zoom Level',
       route: '/detect-display-screen-zoom-level'
     },
+    {
+      id: 4,
+      title: 'Picture-in-Picture Mode',
+      route: '/pip-mode'
+    },
+    {
+      id: 5,
+      title: 'Tab Change Detector',
+      route: '/tab-change-detector'
+    },
   ]
 
   editorList: any[] = [
@@ -323,6 +333,21 @@ export class RoutingListComponent {
       title: 'Table API Call',
       route: '/table-api-call'
     },
+    {
+      id: 6,
+      title: 'QR Code Generator',
+      route: '/qrcode-generator'
+    },
+    {
+      id: 7,
+      title: 'Speech to Text',
+      route: '/speech-to-text '
+    },
+    {
+      id: 8,
+      title: 'Scroll to Load Sections',
+      route: '/scroll-to-load-sections'
+    }
   ]
 
 }

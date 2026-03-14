@@ -213,6 +213,18 @@ export const routes: Routes = [
         './---detect-browser/detect-display-screen-size/detect-display-screen-size.component'
       ).then((m) => m.DetectDisplayScreenSizeComponent),
   },
+  {
+    path: 'pip-mode', loadComponent: () =>
+      import(
+        './---detect-browser/picture-in-picture-mode/picture-in-picture-mode.component'
+      ).then((m) => m.PictureInPictureModeComponent),
+  },
+  {
+    path: 'tab-change-detector', loadComponent: () =>
+      import(
+        './---detect-browser/tab-change-detector/tab-change-detector.component'
+      ).then((m) => m.TabChangeDetectorComponent),
+  },
 
   /*------------------------------------------------------------
                           Editor
@@ -459,6 +471,21 @@ export const routes: Routes = [
     path: 'table-api-call',
     loadComponent: () =>
       import('./---other/table/table').then((m) => m.Table),
+  },
+  {
+    path: 'qrcode-generator',
+    loadComponent: () =>
+      import('./---other/qr-code-generator/qr-code-generator.component').then((m) => m.QrCodeGeneratorComponent),
+  },
+  {
+    path: 'speech-to-text',
+    loadComponent: () =>
+      import('./---other/speech-to-text/speech-to-text.component').then((m) => m.SpeechToTextComponent),
+  },
+  {
+    path: 'scroll-to-load-sections',
+    loadComponent: () =>
+      import('./---other/lazy-load-components/main-lazy-load-compo/main-lazy-load-compo.component').then((m) => m.MainLazyLoadCompoComponent),
   },
   
 ];

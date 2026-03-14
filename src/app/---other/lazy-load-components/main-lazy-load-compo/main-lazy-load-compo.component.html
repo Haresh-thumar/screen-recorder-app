@@ -1,0 +1,97 @@
+<section class="container">
+  <div class="header">
+    <h1>Lazy Loading Components Demo</h1>
+    <p>Scroll down to see components load one by one</p>
+    <div class="stats">
+      <button (click)="resetAll()" class="reset-btn">Reset All</button>
+    </div>
+  </div>
+
+  <!-- Component 1 -->
+  <ng-template
+    [appLazyLoad]="'component-1'"
+    [rootMargin]="'100px'"
+    [threshold]="0.2"
+    [loadingDelay]="2500">
+    <div class="component-wrapper">
+      <app-compo-1></app-compo-1>
+    </div>
+  </ng-template>
+
+  <!-- Component 2 -->
+  <ng-template
+    [appLazyLoad]="'component-2'"
+    [rootMargin]="'100px'"
+    [threshold]="0.2"
+    [loadingDelay]="2500">
+    <div class="component-wrapper">
+      <app-compo-2></app-compo-2>
+    </div>
+  </ng-template>
+
+  <!-- Component 3 -->
+  <ng-template
+    [appLazyLoad]="'component-3'"
+    [rootMargin]="'100px'"
+    [threshold]="0.1"
+    [loadingDelay]="2500">
+    <div class="component-wrapper">
+      <app-compo-3></app-compo-3>
+    </div>
+  </ng-template>
+
+  <!-- Component 4 -->
+  <ng-template
+    [appLazyLoad]="'component-4'"
+    [rootMargin]="'100px'"
+    [threshold]="0.3"
+    [loadingDelay]="2600">
+    <div class="component-wrapper">
+      <app-compo-4></app-compo-4>
+    </div>
+  </ng-template>
+
+  <!-- Component 5 -->
+  <ng-template
+    [appLazyLoad]="'component-5'"
+    [rootMargin]="'100px'"
+    [threshold]="0.2"
+    [loadingDelay]="2500">
+    <div class="component-wrapper">
+      <app-compo-5></app-compo-5>
+    </div>
+  </ng-template>
+
+  <!-- Component 6 -->
+  <ng-template
+    [appLazyLoad]="'component-6'"
+    [rootMargin]="'100px'"
+    [threshold]="0.2"
+    [loadingDelay]="2800">
+    <div class="component-wrapper">
+      <app-compo-6></app-compo-6>
+    </div>
+  </ng-template>
+
+  <!-- Component 7 -->
+  <ng-template
+    [appLazyLoad]="'component-7'"
+    [rootMargin]="'100px'"
+    [threshold]="0.2"
+    [loadingDelay]="2000">
+    <div class="component-wrapper">
+      <app-compo-7></app-compo-7>
+    </div>
+  </ng-template>
+
+  <!-- Component 8 -->
+  <ng-template
+    [appLazyLoad]="'component-8'"
+    [rootMargin]="'100px'"
+    [threshold]="0.2"
+    [loadingDelay]="3000">
+    <div class="component-wrapper">
+      <app-compo-8></app-compo-8>
+    </div>
+  </ng-template>
+</section>
